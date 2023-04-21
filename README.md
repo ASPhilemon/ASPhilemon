@@ -1,5 +1,6 @@
 - 👋 Hi, I’m @ASPhilemon
 - 👀 I’m a a fullstack javascript web developer
+- Other languages - Python
 
 
 
