@@ -28,6 +28,9 @@
 .App-text {
   color: black;
 }
+h4.App-text{
+  margin-bottom: 60px;
+}
 
 @keyframes App-logo-spin {
   from {
