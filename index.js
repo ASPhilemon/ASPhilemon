@@ -1,27 +1,21 @@
 import express from 'express';
-import dotenv from 'dotenv'
-import path from 'path';
-import { fileURLToPath } from 'url';
+import {fileURLToPath} from 'url'
+import {dirname} from "path"
 
 //ENVIRONMENT
-dotenv.config()
 const PORT = process.env.PORT
-const CWD = process.cwd()
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const app = express();
 
 //Middleware
 app.use(express.json())
-app.use(express.static('frontend/build'))
-
-
-app.get('/json', (req, res)=>{
-    res.json({a:8})
-})
+//app.use(express.static(__dirname + '/frontend/build'))
 
 //Serve index.html for all other get requests
 app.get('*', (req, res) => {
-    const filePath = CWD + '/frontend/build/index.html'
+    const filePath = __dirname + '/index.html'
     res.sendFile(filePath)
 });
 

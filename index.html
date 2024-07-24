@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Coming Soon</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('https://source.unsplash.com/1920x1080/?abstract,technology') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            overflow: hidden;
+        }
+        a{
+            text-decoration: none;
+            color:#1E90FF;
+            font-weight: bold;
+        }
+        p{
+            margin:0;
+            max-width: 350px;
+            margin: 0 auto;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 2em 1em;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 2s ease-out;
+        }
+        h1 {
+            font-size: 2.8em;
+            margin-bottom: 0.5em;
+            letter-spacing: 2px;
+            animation: slideIn 1s ease-out;
+        }
+        p {
+            font-size: 1.0em;
+            margin-bottom: 1.5em;
+            line-height: 1.4;
+        }
+        .contact a {
+            color: #1E90FF;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        .contact a:hover {
+            color: #87CEEB;
+        }
+        .tuned{
+            font-size: 1.0em;
+            font-weight: bold;
+        }
+        .full-stack{
+            color: rgb(216, 236, 0);
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .greeting{
+            font-size: 1.5em;
+            color: rgb(240, 176, 14);
+            font-weight: bold;
+            margin: 40px 0;
+        }
+    
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Coming Soon!</h1>
+        <p class="greeting">Hi There</p>
+        <p style="margin:10px">
+            I am Stephen, <span , class="full-stack">Full Stack Developer.</span> </br>
+            Thank you for visiting my website. I’m currently working on updating my portfolio and it will be live soon.
+        <p>In the meantime, feel free to reach out via email at <a href="mailto:your.email@example.com">philemonariko@gmail.com</a></p>
+        <p class="tuned">Stay tuned for more updates!</p>
+    </div>
+</body>
+</html>
