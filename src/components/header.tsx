@@ -8,7 +8,7 @@ export function Header(){
         color="primary"
         variant="h2"
       >
-        ARIKO STEPHEN PHILEMON
+        ARIKO STEPHEN PHILEMON  
       </Typography>
       <Button
         variant="contained"
