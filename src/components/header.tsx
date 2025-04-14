@@ -6,12 +6,11 @@ export function Header(){
     <div>
       <Typography
         color="primary"
-        variant="h2"
       >
-        ARIKO STEPHEN PHILEMON  
+        HELLO WORLD
       </Typography>
       <Button
-        variant="contained"
+        variant="outlined"
         color="success"
       >
         HELLO
