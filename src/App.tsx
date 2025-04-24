@@ -1,19 +1,26 @@
-import { Header } from "./components/header"
 import { CssBaseline } from "@mui/material"
 import { ThemeProvider, createTheme } from "@mui/material/styles"
+import Page from "./page";
 
-const darkTheme = createTheme({
+const theme = createTheme({
   palette: {
-    mode: "dark"
+    primary: {
+      main: "#03a9f4",
+      light: "#e1f5fe",
+      dark: "#01579b",
+    },
+    secondary: {
+      main: "#FF773D"
+    }
   },
 });
 
 
 function App() {
   return (
-    <ThemeProvider theme={darkTheme} >
+    <ThemeProvider theme={theme} >
       <CssBaseline/>
-      <Header/>
+      <Page/>
     </ThemeProvider>
   )
 }
