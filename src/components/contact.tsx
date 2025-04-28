@@ -42,7 +42,7 @@ export default function Contact(){
           />
           <TextField
             label="Your message"
-            minRows={6}
+            minRows={4}
             required
             fullWidth
             multiline
@@ -56,7 +56,7 @@ export default function Contact(){
               onExpire={()=>setHumanVerified(false)}
               refreshExpired="auto"
               fixedSize
-              appearance="always"
+              appearance="execute"
             />
           </Box> 
           <Box sx={{display:"flex", justifyContent:"center"}} >
