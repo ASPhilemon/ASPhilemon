@@ -57,6 +57,7 @@ export default function Contact(){
               refreshExpired="auto"
               fixedSize
               appearance="execute"
+              data-size="flexible"
             />
           </Box> 
           <Box sx={{display:humanVerified? "flex":"none" , justifyContent:"center"}} >
