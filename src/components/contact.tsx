@@ -59,7 +59,7 @@ export default function Contact(){
               appearance="execute"
             />
           </Box> 
-          <Box sx={{display:"flex", justifyContent:"center"}} >
+          <Box sx={{display:humanVerified? "none":"flex" , justifyContent:"center"}} >
             <Button
               variant="contained"
               sx={{bgcolor:"secondary.main", width:"70%", py:2, boxShadow:4}}
