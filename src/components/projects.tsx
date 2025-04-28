@@ -10,11 +10,21 @@ import {
   ArrowOutward as ArrowOutwardIcon,
 } from '@mui/icons-material'
 
+import {
+  SiMongodb as MongoIcon,
+  SiNodedotjs as NodeIcon,
+  SiReact as ReactIcon,
+  SiExpress as ExpressIcon,
+  SiJest as JestIcon,
+} from 'react-icons/si';
+
+import { ReactTestingLibIcon } from "../icons/react-testing-lib.tsx"
+
 import projects from "../data/projects"
 
 export default function Projects(){
   return(
-    <Container maxWidth={false} sx={{bgcolor:"primary.light", my:8, pb:3}} >
+    <Container id="projects" maxWidth={false} sx={{ mt:5, pb:4, bgcolor:"primary.light"}} >
       <Typography color='primary.main' variant='h5' sx={{textAlign: "center", py:3, fontWeight:600}} >Projects</Typography>
       <Grid container rowSpacing={3} columnSpacing={2} sx={{justifyContent:"center", alignItems:"stretch"}} >
         {
@@ -32,7 +42,7 @@ export default function Projects(){
 
 function Project({project}){
   return(
-    <Card component={Grid} sx={{ maxWidth: 345, pb:3, boxShadow:"none", ":hover": {boxShadow:4} }}>
+    <Card component={Grid} sx={{ maxWidth: 345, pb:3, boxShadow:"none", ":hover": {boxShadow:2} }}>
       <CardMedia
         sx={{ height: 240 }}
         image={project.photo}
@@ -53,9 +63,10 @@ function Project({project}){
         <List>
           {
             project.stack.map((tool)=>{
+              const Icon = icons[tool.name]
               return(
-                <ListItem sx={{p:1}} >
-                  <ListItemIcon> { <tool.icon fontSize={"25px"} color ="grey" /> } </ListItemIcon>
+                <ListItem key={tool.name} sx={{p:1}} >
+                  <ListItemIcon> { <Icon fontSize={"25px"} color ="grey" /> } </ListItemIcon>
                   <ListItemText> { tool.purpose} </ListItemText>
                 </ListItem>
               )
@@ -70,4 +81,13 @@ function Project({project}){
     </Card>
   )
 
+}
+
+const icons = {
+  React: ReactIcon,
+  MongoDB: MongoIcon,
+  Express: ExpressIcon,
+  Node: NodeIcon,
+  Jest: JestIcon,
+  "React Testing Library": ReactTestingLibIcon
 }

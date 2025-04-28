@@ -3,7 +3,7 @@ import { cloneElement } from 'react';
 import {
   Container, Grid, AppBar, Toolbar,
   Button, Link, Avatar, Typography,
-  useScrollTrigger
+  useScrollTrigger, Slide
 } from '@mui/material';
 
 import dp from "./../assets/img/dp.jpg"
@@ -36,16 +36,43 @@ export default function Header() {
       <ElevationScroll >
         <AppBar position='sticky' >
           <Toolbar sx={{position: "sticky", top:0, left:0, bgcolor:"primary.main", py:2}} >
-            <Link sx={{color: "white", mr:{xs:1, md:2}, fontWeight:"bold"}}  href ="#about" >About</Link>
-            <Link sx={{color: "white", mr:{xs:1, md:2}}} href="#projects" >Projects</Link>
-            <Link sx={{color: "white", mr:"auto" }} href="#trainings" >Trainings</Link>
-            <Button   color='secondary' variant="contained" >Get In Touch</Button>
+            <Link
+              sx={{color: "white", mr:{xs:1, md:2}, fontWeight:"bold"}} 
+              href ="#about"
+              onClick = {(e)=>handleLinkClick(e, "about")}
+            > About</Link>
+            <Link
+              sx={{color: "white", mr:{xs:1, md:2}}}
+              href="#projects"
+              onClick = {(e)=>handleLinkClick(e, "projects")}
+            >Projects</Link>
+            <Link
+              sx={{color: "white", mr:"auto" }}
+              href="#trainings"
+              onClick = {(e)=>handleLinkClick(e, "trainings")}
+            >Trainings</Link>
+            <Button
+              color='secondary'
+              variant="contained"
+              onClick={(e)=>handleLinkClick(e, "contact")}
+            >Get In Touch</Button>
           </Toolbar>
       </AppBar>
       </ElevationScroll>
     </>
   );
 }
+
+function handleLinkClick(e, toId){
+  e.preventDefault();
+  const toElement = document.querySelector(`#${toId}`)
+  const offset =-80
+  if (toElement) {
+    const y = toElement.getBoundingClientRect().top + window.pageYOffset;
+    window.scrollTo({ top: y-300, behavior: 'instant', });
+    window.scrollTo({ top: y+offset, behavior: 'smooth', });
+  }
+};
 
 function ElevationScroll({children}) {
 

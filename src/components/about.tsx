@@ -20,7 +20,7 @@ import techStack from "../data/techstack";
 
 export default function About(){
   return(
-    <Container >
+    <Container id="about" >
       <Typography sx={{ textAlign:"center", mt:4, mb:2, color:"primary.main",}}  variant='h5' >About Me</Typography>
       <Typography sx={{ textAlign:"left", maxWidth:"400px", mx:"auto", fontWeight:"light"}}>
         <Box component={"span"} sx={{mb:1, display:"block", fontWeight:500}} >Hi There, I am Stephen,</Box>
@@ -42,8 +42,9 @@ function TechStack(){
     >
       {
         techStack.map((tool)=>{
+          const Icon = icons[tool]
           return(
-            <Grid key={tool} ><Chip icon={icons[tool]} sx={{minWidth:90}} label={tool} /> </Grid>
+            <Grid key={tool} ><Chip icon = {<Icon/> } sx={{minWidth:90}} label={tool} /> </Grid>
           )
         })
       } 
