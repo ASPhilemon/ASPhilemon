@@ -48,7 +48,7 @@ export default function Contact(){
             multiline
             sx={{mb:3}}
           />
-          <Box sx={{ display:humanVerified? "none":"flex", justifyContent:"center", mb:1}}>
+          <Box sx={{ display:humanVerified? "none":"flex", justifyContent:"center"}}>
             <Turnstile
               sitekey="0x4AAAAAABLiNjG3UqGkZv9_"
               theme="light"
