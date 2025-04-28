@@ -48,7 +48,7 @@ export default function Contact(){
             multiline
             sx={{mb:1}}
           />
-          <Box sx={{ display:"flex", justifyContent:"center", mb:1}}>
+          <Box sx={{ display:humanVerified? "none":"flex", justifyContent:"center", mb:1}}>
             <Turnstile
               sitekey="0x4AAAAAABLiNjG3UqGkZv9_"
               theme="light"
@@ -59,7 +59,7 @@ export default function Contact(){
               appearance="execute"
             />
           </Box> 
-          <Box sx={{display:humanVerified? "none":"flex" , justifyContent:"center"}} >
+          <Box sx={{display:"flex" , justifyContent:"center"}} >
             <Button
               variant="contained"
               sx={{bgcolor:"secondary.main", width:"70%", py:2, boxShadow:4}}
