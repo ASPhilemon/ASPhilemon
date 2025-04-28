@@ -41,6 +41,12 @@ export default function Contact(){
             multiline
             sx={{mb:3}}
           />
+          <Box
+            className="cf-turnstile"
+            data-sitekey="0x4AAAAAABLiNjG3UqGkZv9_"
+            data-theme="light"
+            sx={{mb:3}}
+          /> 
           <Box sx={{display:"flex", justifyContent:"center"}} >
             <Button
               variant="contained"

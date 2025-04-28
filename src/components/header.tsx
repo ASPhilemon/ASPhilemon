@@ -3,7 +3,7 @@ import { cloneElement } from 'react';
 import {
   Container, Grid, AppBar, Toolbar,
   Button, Link, Avatar, Typography,
-  useScrollTrigger, Slide
+  useScrollTrigger,
 } from '@mui/material';
 
 import dp from "./../assets/img/dp.jpg"
