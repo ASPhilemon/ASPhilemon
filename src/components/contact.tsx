@@ -1,10 +1,17 @@
+import { useState } from "react";
+
 import {
   Container,Typography, Button, Box,
   Paper, TextField,
 } from "@mui/material"
 
+import Turnstile from "react-turnstile";
+
+
+
 
 export default function Contact(){
+  const [humanVerified, setHumanVerified] = useState(false)
   return(
     <Container 
       maxWidth={false}
@@ -39,18 +46,24 @@ export default function Contact(){
             required
             fullWidth
             multiline
-            sx={{mb:3}}
+            sx={{mb:1}}
           />
-          <Box
-            className="cf-turnstile"
-            data-sitekey="0x4AAAAAABLiNjG3UqGkZv9_"
-            data-theme="light"
-            sx={{mb:3}}
-          /> 
+          <Box sx={{ display:"flex", justifyContent:"center", mb:1}}>
+            <Turnstile
+              sitekey="0x4AAAAAABLiNjG3UqGkZv9_"
+              theme="light"
+              onVerify={()=>setHumanVerified(true)}
+              onExpire={()=>setHumanVerified(false)}
+              refreshExpired="auto"
+              fixedSize
+              appearance="always"
+            />
+          </Box> 
           <Box sx={{display:"flex", justifyContent:"center"}} >
             <Button
               variant="contained"
               sx={{bgcolor:"secondary.main", width:"70%", py:2, boxShadow:4}}
+              disabled = {!humanVerified}
               type="submit"
             > Submit </Button>
           </Box>
