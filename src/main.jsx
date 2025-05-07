@@ -8,6 +8,8 @@ import '@fontsource/roboto/latin-400.css';
 import '@fontsource/roboto/latin-500.css';
 import '@fontsource/roboto/latin-700.css';
 
+import './main.css'
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />

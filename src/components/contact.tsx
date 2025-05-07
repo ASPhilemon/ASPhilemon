@@ -8,8 +8,6 @@ import {
 import Turnstile from "react-turnstile";
 
 
-
-
 export default function Contact(){
   const [humanVerified, setHumanVerified] = useState(false)
   return(

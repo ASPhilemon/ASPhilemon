@@ -1,9 +1,37 @@
 import {
-  Typography
+  Typography, Container, Box, Link
 } from "@mui/material"
 
+import { useEffect, useState } from "react"
+
+import { GitHub, LinkedIn, X } from "@mui/icons-material"
+
 export default function Footer(){
+  const [currentYear, setCurrentYear] : any= useState(null)
+  useEffect(()=>{
+    setCurrentYear(new Date().getFullYear())
+  })
   return(
-    <Typography> Footer </Typography>
+    <Container
+      maxWidth = {false}
+      sx={{bgcolor:"primary.dark", display:"flex", justifyContent:"space-around", py:4}}
+    >
+      <Typography sx={{ color:"white"}}>
+        &copy;ASPhilemon {currentYear}
+      </Typography>
+      <Box sx={{}} >
+        <Link href = "https://github.com/ASPhilemon" sx={{mr:3, color:"white"}}> 
+          <GitHub sx={{fontSize:"20px"}} />
+        </Link>
+        <Link href = "https://linkedin.com" sx={{mr:3, color:"white"}} >
+          <LinkedIn sx={{fontSize:"20px"}} />
+        </Link>
+        <Link href = "https://x.com" sx={{color:"white"}} >
+          <X sx={{fontSize:"20px"}} />
+        </Link>
+      </Box>
+
+
+    </Container>
   )
 }

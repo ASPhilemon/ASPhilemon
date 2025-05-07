@@ -16,7 +16,7 @@ import trainings from "../data/trainings"
 
 export default function Trainings(){
   return(
-    <Container id="trainings" maxWidth={false} sx={{mt:2}} >
+    <Container  id="trainings" maxWidth={false} sx={{mt:2}} >
       <Typography color='primary.main' variant='h5' sx={{textAlign: "center", py:3, fontWeight:600}} >Trainings</Typography>
       <Grid container rowSpacing={3} columnSpacing={2} sx={{justifyContent:"center", alignItems:"stretch"}} >
         {

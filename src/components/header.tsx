@@ -2,10 +2,11 @@ import { cloneElement } from 'react';
 
 import {
   Container, Grid, AppBar, Toolbar,
-  Button, Link, Avatar, Typography,
+  Button, Avatar, Typography,
   useScrollTrigger,
 } from '@mui/material';
 
+import ScrollSpy from 'react-scrollspy-navigation';
 import dp from "./../assets/img/dp.jpg"
 
 export default function Header() {
@@ -18,39 +19,30 @@ export default function Header() {
           </Grid>
           <Grid sx = {{display:"flex", alignItems:"baseline"}} >
             <Avatar  sx={{mr:2, width:120, height:120, borderRadius: 2, boxShadow:4}} alt="Cindy Baker" src={dp} />
-            {/* <Box sx={{display:{xs:"none", md:"flex"} }} >
-            <Link style={{color:"black",}}  href="/">
-                <XIcon  fontSize='small' sx={{mr:{md:1}, mb:{xs:0.1, md:0}, width:"15px"}}  />
-            </Link>
-
-            <Link style={{color:"black"}}  href="/">
-                <GitHubIcon   fontSize='small' sx={{mr:{md:1}, mb:{xs:0.1, md:0}, width:"15px",}}  />
-            </Link>
-              <Link style={{color:"black", width:"15px", }}  href="/">
-                <LinkedInIcon  fontSize='small' />
-            </Link>
-            </Box> */}
           </Grid>
         </Grid>
       </Container>
       <ElevationScroll >
         <AppBar position='sticky' >
           <Toolbar sx={{position: "sticky", top:0, left:0, bgcolor:"primary.main", py:2}} >
-            <Link
-              sx={{color: "white", mr:{xs:1, md:2}, fontWeight:"bold"}} 
-              href ="#about"
-              onClick = {(e)=>handleLinkClick(e, "about")}
-            > About</Link>
-            <Link
-              sx={{color: "white", mr:{xs:1, md:2}}}
-              href="#projects"
-              onClick = {(e)=>handleLinkClick(e, "projects")}
-            >Projects</Link>
-            <Link
-              sx={{color: "white", mr:"auto" }}
-              href="#trainings"
-              onClick = {(e)=>handleLinkClick(e, "trainings")}
-            >Trainings</Link>
+            <ScrollSpy activeClass='nav-active' >
+              <a 
+                href="#about"
+                onClick = {(e)=>handleLinkClick(e, "about")}
+                style={{marginRight:"10px", color:"black", fontSize:"17px"}}
+              >About</a>
+              <a
+                href="#projects"
+                onClick = {(e)=>handleLinkClick(e, "projects")}
+                style={{marginRight:"10px", color:"black", fontSize:"17px"}}
+              >Projects</a>
+              <a
+                href="#trainings"
+                onClick = {(e)=>handleLinkClick(e, "trainings")}
+                style={{marginRight:"auto", color:"black", fontSize:"17px"}}
+              >Trainings</a>
+            </ScrollSpy>
+
             <Button
               color='secondary'
               variant="contained"
