@@ -6,25 +6,42 @@ import {
   useScrollTrigger,
 } from '@mui/material';
 
+
 import ScrollSpy from 'react-scrollspy-navigation';
 import dp from "./../assets/img/dp.jpg"
+
+import ProfilePhotoViewer from './profile-viewer';
 
 export default function Header() {
   return (
     <>
-      <Container maxWidth={false} sx={{px:3, pt:2, bgcolor:"primary.main", pb:3}} >
+      <Container
+        maxWidth={false}
+        sx={{
+          pt:2,
+          background:"linear-gradient(90deg,rgb(1, 112, 164), #01579b 30%, #01579b 70%,  #047cb4)",
+          pb:3,
+          px:{md:16}
+        }}
+      >
         <Grid container sx={{alignItems:"center", flexWrap:"nowrap",}} >
           <Grid size={6} sx={{mr:"auto"}} >
-            <Typography sx={{textShadow:'2px 2px 4px rgba(0,0,0,0.3)', fontWeight:"bold", letterSpacing:{xs:1.2, md:3}}} variant="h6" >ARIKO STEPHEN PHILEMON</Typography>
+            <Typography sx={{textShadow:'2px 2px 4px rgba(0,0,0,0.3)', fontWeight:"lighter", letterSpacing:{xs:1.2, md:3}, color:"white"}} variant="h6" >ARIKO STEPHEN PHILEMON</Typography>
           </Grid>
-          <Grid sx = {{display:"flex", alignItems:"baseline"}} >
-            <Avatar  sx={{mr:2, width:120, height:120, borderRadius: 2, boxShadow:4}} alt="Cindy Baker" src={dp} />
-          </Grid>
+          {/* <Avatar  sx={{width:120, height:120, borderRadius: 2, boxShadow:1}} alt="Ariko Stephen Philemon" src={dp} /> */}
+          <ProfilePhotoViewer/>
         </Grid>
       </Container>
       <ElevationScroll >
         <AppBar position='sticky' >
-          <Toolbar sx={{position: "sticky", top:0, left:0, bgcolor:"primary.main", py:2}} >
+          <Toolbar
+            sx={{
+              position: "sticky", top:0, left:0,
+              background:"linear-gradient(90deg,rgb(1, 112, 164), #01579b 30%, #01579b 70%,  #047cb4)",
+              py:2,
+              px:{md:16}
+            }}
+            >
             <ScrollSpy activeClass='nav-active' >
               <a 
                 href="#about"
@@ -51,6 +68,7 @@ export default function Header() {
           </Toolbar>
       </AppBar>
       </ElevationScroll>
+      
     </>
   );
 }
