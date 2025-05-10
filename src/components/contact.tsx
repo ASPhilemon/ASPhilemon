@@ -53,6 +53,7 @@ export default function Contact(){
               onVerify={()=>setHumanVerified(true)}
               onExpire={()=>setHumanVerified(false)}
               refreshExpired="auto"
+              retry="auto"
               fixedSize
               appearance="execute"
               data-size="flexible"
