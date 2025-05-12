@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Box, Avatar, Modal } from "@mui/material";
-import dp from "../assets/img/dp.jpg"
+import dp from "../assets/img/dp.png"
 
 const MotionAvatar = motion(Avatar);
 const MotionBox = motion(Box);
@@ -41,7 +41,7 @@ export const ProfilePhotoViewer = () => {
                 },
                 maxWidth: {
                   xs:300,
-                  md:350
+                  md:450
                 },
                 outline: "none",
               }}

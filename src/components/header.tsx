@@ -8,7 +8,6 @@ import {
 
 
 import ScrollSpy from 'react-scrollspy-navigation';
-// import dp from "./../assets/img/dp.jpg"
 
 import ProfilePhotoViewer from './profile-viewer';
 
