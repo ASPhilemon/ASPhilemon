@@ -1,6 +1,6 @@
 import {
   Container, Typography, Box,
-  Button, Grid, Chip
+  Button, Grid, Chip, Slide
 } from "@mui/material"
 
 import {
@@ -26,7 +26,6 @@ import Typewriter from 'react-ts-typewriter';
 export default function About(){
   const [animationStatus, setAnimationStatus] = useState({greeting:true, about:false})
   const [completed, setCompleted] = useState(0)
-  console.log(completed)
   const greeting = "Hi There, I am Stephen,"
   const about = `a fullstack web developer based in Kampala, Uganda.
   I have over 2 years experience developing and deploying secure,
@@ -44,26 +43,31 @@ export default function About(){
             animationStatus={animationStatus}
             nextAnimation={'about'}
             setCompleted = {setCompleted}
-            showWait={2000}
+            showWait={1000}
           />
         </Box>
-        <TypewriterWrapper
-          text = {about}
-          animation="about"
-          setAnimationStatus={setAnimationStatus}
-          animationStatus={animationStatus}
-          nextAnimation={"contact"}
-          setCompleted={setCompleted}
-          showWait={2000}
-        />
+        <Box sx={{fontWeight:"light"}} >
+          <TypewriterWrapper
+              text = {about}
+              animation="about"
+              setAnimationStatus={setAnimationStatus}
+              animationStatus={animationStatus}
+              nextAnimation={"contact"}
+              setCompleted={setCompleted}
+              showWait={1000}
+          />
+        </Box>
+  
       </Box>
-      <Box sx={{position:"relative", maxWidth:500, mx:"auto"}} >
+      <Box sx={{position:"relative", maxWidth:400, mx:"auto"}} >
         <Box sx={{visibility:"hidden"}} >
           <TechStack />
         </Box>
-        <Box sx={{position:"absolute", left:0, top:0}} >
-          { completed >=2 && <TechStack/>}
-        </Box>
+        { completed >=2 &&  
+          <div style={{position:"absolute", left:0, top:0}} className="slide-in" >
+            <TechStack/>
+          </div>
+        }
       </Box>
       <Box sx={{ mb:2, textAlign:"center"}} >
         <TypewriterWrapper
@@ -80,14 +84,12 @@ export default function About(){
         <Box sx={{visibility:"hidden"}} >
           <Button color='secondary'  variant='contained' sx={{display:"flex", mx:"auto", py:1.8, px:3}} >Get In Touch</Button>
         </Box>
-        <Box sx={{position:"absolute", left:0, top:0, width:"100%"}} >
-          { completed >= 3 &&
-            <Button color='secondary'  variant='contained' sx={{display:"flex", mx:"auto", py:1.8, px:3}} >Get In Touch</Button>
+          { completed >=3 &&  
+            <div style={{position:"absolute", left:0, top:0, width:"100%"}} className="slide-in" >
+              <Button color='secondary'  variant='contained' sx={{display:"flex", mx:"auto", py:1.8, px:3}} >Get In Touch</Button>
+            </div>
           }
         </Box>
-      </Box>
-    
-      
     </Container>
   )
 }
@@ -95,13 +97,13 @@ export default function About(){
 function TechStack(){
   const [show, setShow] = useState(false)
   useEffect(()=>{
-    setTimeout(()=>setShow(true), 1)
+    setTimeout(()=>setShow(true), 500)
   })
   return(
     <Grid
       spacing={1}
       container
-      sx={{py:5, flexWrap: "wrap", justifyContent:"center"}}
+      sx={{py:3, flexWrap: "wrap", justifyContent:"center"}}
     >
       {
         techStack.map((tool)=>{
@@ -138,7 +140,6 @@ function TypewriterWrapper({
 }){
   const [show, setShow] = useState(false)
   const [hasFinished, setHasFinished] = useState(false)
-  console.log(animation, show)
 
   useEffect(()=>{
     setTimeout(()=>setShow(true), showWait)
@@ -150,7 +151,7 @@ function TypewriterWrapper({
         {text}
       </Box>
      { show &&
-      <Typography sx={{position:"absolute", left:0, top:0, width:"100%"}} >
+      <Box sx={{position:"absolute", left:0, top:0, width:"100%"}} >
         {
           animationStatus[animation] &&
           <Typewriter
@@ -167,7 +168,7 @@ function TypewriterWrapper({
         />
         }
 
-      </Typography>
+      </Box>
       }
     </Box>
 

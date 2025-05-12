@@ -6,6 +6,11 @@ a{
   text-decoration: none;
 }
 
-.Typewriter__cursor.done {
-  display: none;
+.slide-in{
+  animation: slideup forwards 3s;
+}
+
+@keyframes slideup{
+  from { transform: translateY(50px);}
+  to { transform: translateY(0);}
 }
