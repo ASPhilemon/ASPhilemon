@@ -21,7 +21,7 @@ export default function Contact(){
         variant='h5' sx={{textAlign: "center", py:3, fontWeight:600}}
       > Get In Touch </Typography>
       <Box sx={{display:"flex", justifyContent:"center"}}>
-        <Paper component={"form"} sx={{minWidth:"300px", maxWidth:"400px", bgcolor:"white", px:2, py:5, boxShadow:1}} >
+        <Paper component={"form"} sx={{minWidth:"300px", maxWidth:"350px", bgcolor:"white", px:2, py:5, boxShadow:1}} >
           <TextField
             sx={{mb:3}}
             fullWidth
@@ -40,7 +40,7 @@ export default function Contact(){
           />
           <TextField
             label="Your message"
-            minRows={4}
+            minRows={3}
             required
             fullWidth
             multiline

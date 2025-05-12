@@ -5,3 +5,7 @@
 a{
   text-decoration: none;
 }
+
+.Typewriter__cursor.done {
+  display: none;
+}

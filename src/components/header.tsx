@@ -26,9 +26,8 @@ export default function Header() {
       >
         <Grid container sx={{alignItems:"center", flexWrap:"nowrap",}} >
           <Grid size={6} sx={{mr:"auto"}} >
-            <Typography sx={{textShadow:'2px 2px 4px rgba(0,0,0,0.3)', fontWeight:"lighter", letterSpacing:{xs:1.2, md:3}, color:"white"}} variant="h6" >ARIKO STEPHEN PHILEMON</Typography>
+            <Typography sx={{textShadow:'2px 2px 4px rgba(0,0,0,0.3)', fontWeight:"light", letterSpacing:{xs:1.2, md:3}, color:"white"}} variant="h6" >ARIKO STEPHEN PHILEMON</Typography>
           </Grid>
-          {/* <Avatar  sx={{width:120, height:120, borderRadius: 2, boxShadow:1}} alt="Ariko Stephen Philemon" src={dp} /> */}
           <ProfilePhotoViewer/>
         </Grid>
       </Container>
