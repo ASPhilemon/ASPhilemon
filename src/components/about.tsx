@@ -1,6 +1,6 @@
 import {
   Container, Typography, Box,
-  Button, Grid, Chip, Slide
+  Button, Grid, Chip,
 } from "@mui/material"
 
 import {
@@ -86,7 +86,13 @@ export default function About(){
         </Box>
           { completed >=3 &&  
             <div style={{position:"absolute", left:0, top:0, width:"100%"}} className="slide-in-sm" >
-              <Button color='secondary'  variant='contained' sx={{display:"flex", mx:"auto", py:1.8, px:3}} >Get In Touch</Button>
+              <Button
+                href="#contact"
+                color='secondary'
+                variant='contained'
+                sx={{display:"flex", mx:"auto", py:1.8, px:3, width:"180px"}}
+                onClick = {(e)=>handleLinkClick(e, "contact")}
+              > Get In Touch </Button>
             </div>
           }
         </Box>
@@ -103,7 +109,7 @@ function TechStack(){
     <Grid
       spacing={1}
       container
-      sx={{py:3, flexWrap: "wrap", justifyContent:"center"}}
+      sx={{py:3, flexWrap: "wrap", justifyContent:"center", mb:3}}
     >
       {
         techStack.map((tool)=>{
@@ -175,3 +181,14 @@ function TypewriterWrapper({
   )
 }
 
+
+function handleLinkClick(e, toId){
+  e.preventDefault();
+  const toElement = document.querySelector(`#${toId}`)
+  const offset =-80
+  if (toElement) {
+    const y = toElement.getBoundingClientRect().top + window.pageYOffset;
+    window.scrollTo({ top: y-300, behavior: 'instant', });
+    window.scrollTo({ top: y+offset, behavior: 'smooth', });
+  }
+};
