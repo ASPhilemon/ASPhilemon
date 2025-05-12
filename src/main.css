@@ -10,7 +10,16 @@ a{
   animation: slideup forwards 3s;
 }
 
+.slide-in-sm{
+  animation: slideup-sm forwards 2s;
+}
+
 @keyframes slideup{
   from { transform: translateY(50px);}
+  to { transform: translateY(0);}
+}
+
+@keyframes slideup-sm{
+  from { transform: translateY(10px);}
   to { transform: translateY(0);}
 }

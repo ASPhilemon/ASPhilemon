@@ -85,7 +85,7 @@ export default function About(){
           <Button color='secondary'  variant='contained' sx={{display:"flex", mx:"auto", py:1.8, px:3}} >Get In Touch</Button>
         </Box>
           { completed >=3 &&  
-            <div style={{position:"absolute", left:0, top:0, width:"100%"}} className="slide-in" >
+            <div style={{position:"absolute", left:0, top:0, width:"100%"}} className="slide-in-sm" >
               <Button color='secondary'  variant='contained' sx={{display:"flex", mx:"auto", py:1.8, px:3}} >Get In Touch</Button>
             </div>
           }
