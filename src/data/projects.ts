@@ -27,10 +27,6 @@ const projects = [
         name: "Jest",
         purpose: "Utlilized Jest for unit testing of components.",
       },
-      {
-        name: "React Testing Library",
-        purpose: "Utlilized React Testing Library for unit testing react components.",
-      },
 
     ],
     github: "https:github.com/ASPhilemon/dash-growthspring",
@@ -47,8 +43,8 @@ const projects = [
         purpose: "Utlilized React and React Bootstrap for building page components ",
       },
       {
-        name: "React Testing Library",
-        purpose: "Utlilized React Testing Library and Jest for unit testing react components.",
+        name: "Jest",
+        purpose: "Utlilized Jest with React Testing Library for unit testing react components.",
       },
     ],
     github: "https:github.com/ASPhilemon/skilline",

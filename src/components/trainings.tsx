@@ -61,7 +61,24 @@ function Training({training}){
                   <ListItemIcon>
                     <Avatar
                       src = {skill.img}
-                      sx={{mr:3, width:"50px", maxHeight:"70px", borderRadius:0, boxShadow:1}}
+                      sx={{
+                        mr:3,
+                        width:"60px",
+                        maxHeight:"40px",
+                        borderRadius:0,
+                        boxShadow:1,
+                        transformOrigin:"bottom left",
+                        transition: "transform 0.4s",
+                        background:"white",
+                        p:0.3,
+                        ":hover":{
+                          transform:"scale(5,5)",
+                          transformOrigin:"bottom left",
+                          boxShadow:4,
+                          border:0,
+                          borderColor:"#9CA3AF",
+                        }
+                      }}
                       variant="square"
                     />
                   </ListItemIcon>

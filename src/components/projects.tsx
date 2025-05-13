@@ -1,7 +1,8 @@
 import {
   Container, Grid, Typography, Button,
   Card, CardMedia, CardContent, CardActions,
-  List, ListItem, ListItemIcon, ListItemText
+  List, ListItem, ListItemIcon, ListItemText,
+  Box
 } from "@mui/material"
 
 import {
@@ -17,8 +18,6 @@ import {
   SiExpress as ExpressIcon,
   SiJest as JestIcon,
 } from 'react-icons/si';
-
-import ReactTestingLibImg from "../assets/img/projects/react-testing-lib.png"
 
 import projects from "../data/projects"
 
@@ -66,7 +65,7 @@ function Project({project}){
               const Icon = icons[tool.name]
               return(
                 <ListItem key={tool.name} sx={{p:1}} >
-                  <ListItemIcon> { <Icon fontSize={"25px"} color ="grey" /> } </ListItemIcon>
+                  <ListItemIcon> { <IconWrapper Icon = {Icon} /> } </ListItemIcon>
                   <ListItemText> { tool.purpose} </ListItemText>
                 </ListItem>
               )
@@ -89,11 +88,23 @@ const icons = {
   Express: ExpressIcon,
   Node: NodeIcon,
   Jest: JestIcon,
-  "React Testing Library": ReactTestingLibIcon
 }
-
-function ReactTestingLibIcon(){
+function IconWrapper({Icon}){
   return(
-    <img width={"25px"} src = { ReactTestingLibImg } />
+    <Box sx={{
+      width:"60px",
+      height:"60px",
+      transition: "transform 0.3s",
+      transformOrigin: "bottom left",
+      ":hover": {
+        transform: "scale(3, 3)",
+        transformOrigin:"bottom left"},
+        boxShadow:1,
+        background:"white",
+        p:1,
+        mr:2
+    }}>
+      <Icon size = "100%" color = "grey" />
+    </Box>
   )
 }
