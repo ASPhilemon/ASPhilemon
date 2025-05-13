@@ -9,7 +9,11 @@ import {
   GitHub as GitHubIcon,
   Language as WebIcon,
   ArrowOutward as ArrowOutwardIcon,
+  KeyboardArrowDown as KeyboardArrowDownIcon,
+  KeyboardArrowUp as KeyboardArrowUpIcon,
 } from '@mui/icons-material'
+
+import { useState } from "react"
 
 
 import trainings from "../data/trainings"
@@ -33,10 +37,21 @@ export default function Trainings(){
 }
 
 function Training({training}){
+
+  const [skills, setSkills] = useState(training.skills.slice(0, 15))
+
   return(
     <Card
       component={Grid}
-      sx={{ maxWidth: 345, pb:3, boxShadow:"none", border:1, borderColor:"#D1D5D8", ":hover": {boxShadow:2}}}
+      sx={{
+        maxWidth: 345,
+        pb:3,
+        boxShadow:"none",
+        border:1,
+        borderColor:"#D1D5D8",
+        ":hover": {boxShadow:2},
+        transition: "height 1s"
+      }}
     >
       <CardMedia
         sx={{ height: 240, borderBottom: 0, borderColor: "#D1D5DB"}}
@@ -52,45 +67,71 @@ function Training({training}){
         <Typography sx={{fontSize: 19, mt:2, mb:0, color:"primary.main", fontWeight:900}}  gutterBottom variant="h6" >
           Skills Gained
         </Typography>
-        <List>
-          {
-            training.skills.map((skill, index)=>{
-              const bottomBorder = index == training.skills.length-1? 0 : 1
-              return(
-                <ListItem key={skill.name} sx={{p:1, borderBottom: bottomBorder, borderColor:"#D1D5D8"}} >
-                  <ListItemIcon>
-                    <Avatar
-                      src = {skill.img}
-                      sx={{
-                        mr:3,
-                        width:"60px",
-                        maxHeight:"40px",
-                        borderRadius:0,
-                        boxShadow:1,
-                        transformOrigin:"bottom left",
-                        transition: "transform 0.4s",
-                        background:"white",
-                        p:0.3,
-                        ":hover":{
-                          transform:"scale(5,5)",
+        <Box
+          sx = {{
+            
+          }}
+        >
+          <List>
+            {
+              skills.map((skill, index)=>{
+                const bottomBorder = index == skills.length-1? 0 : 1
+                return(
+                  <ListItem key={skill.name} sx={{p:1, borderBottom: bottomBorder, borderColor:"#D1D5D8"}} >
+                    <ListItemIcon>
+                      <Avatar
+                        src = {skill.img}
+                        sx={{
+                          mr:3,
+                          width:"60px",
+                          maxHeight:"40px",
+                          borderRadius:0,
+                          boxShadow:1,
                           transformOrigin:"bottom left",
-                          boxShadow:4,
-                          border:0,
-                          borderColor:"#9CA3AF",
-                        }
-                      }}
-                      variant="square"
-                    />
-                  </ListItemIcon>
-                  <ListItemText sx={{fontWeight:'light'}} >
-                    <Box component={"span"} sx={{fontWeight:500}} > {skill.name} </Box> <br/> 
-                    <Box component={"span"} sx={{fontWeight:"light", fontSize:15}} > {skill.about} </Box>
-                  </ListItemText>
-                </ListItem>
-              )
-            })
+                          transition: "transform 0.4s",
+                          background:"white",
+                          p:0.3,
+                          ":hover":{
+                            transform:"scale(4,4)",
+                            transformOrigin:"bottom left",
+                            boxShadow:4,
+                            border:0,
+                            borderColor:"#9CA3AF",
+                          }
+                        }}
+                        variant="square"
+                      />
+                    </ListItemIcon>
+                    <ListItemText sx={{fontWeight:'light'}} >
+                      <Box component={"span"} sx={{fontWeight:500}} > {skill.name} </Box> <br/> 
+                      <Box component={"span"} sx={{fontWeight:"light", fontSize:15}} > {skill.about} </Box>
+                    </ListItemText>
+                  </ListItem>
+                )
+              })
+            }
+          </List>
+          {
+            training.skills.length > 15 &&
+            <Button
+              color="primary"
+              variant="outlined"
+              endIcon = { skills.length < training.skills.length?
+                <KeyboardArrowDownIcon/>:
+                <KeyboardArrowUpIcon/>
+              }
+              sx={{display:"flex", mx:"auto", mb:3}}
+              onClick = {()=>{
+                setSkills( skills.length < training.skills.length?
+                  training.skills:
+                  training.skills.slice(0, 3)
+                )
+              }}
+              >
+              { skills.length < training.skills.length? "MORE" : "LESS" }
+            </Button>
           }
-        </List>
+        </Box>
       </CardContent>
       <CardActions sx={{display:"flex", justifyContent:"center"}} >
         {
