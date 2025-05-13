@@ -3,7 +3,7 @@ export function scrollTo(e, elementId){
   const target = document.getElementById(elementId);
   if (!target) return;
 
-  const targetTop = target.getBoundingClientRect().top + window.pageYOffset - 80;
+  const targetTop = target.getBoundingClientRect().top + window.pageYOffset;
   const currentTop = window.pageYOffset;
   const distance = Math.abs(targetTop - currentTop);
 
