@@ -71,17 +71,6 @@ export default function Header() {
   );
 }
 
-function handleLinkClick(e, toId){
-  e.preventDefault();
-  const toElement = document.querySelector(`#${toId}`)
-  const offset = -80
-  if (toElement) {
-    const y = toElement.getBoundingClientRect().top + window.pageYOffset;
-    window.scrollTo({ top: y-200, behavior: 'instant', });
-    window.scrollTo({ top: y + offset, behavior: 'smooth', });
-  }
-};
-
 function ElevationScroll({children}) {
 
   const trigger = useScrollTrigger({
