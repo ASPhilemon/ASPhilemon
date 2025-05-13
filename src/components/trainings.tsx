@@ -61,7 +61,7 @@ function Training({training}){
                   <ListItemIcon>
                     <Avatar
                       src = {skill.img}
-                      sx={{mr:3, width:"50px", maxHeight:"70px", borderRadius:0, boxShadow:0}}
+                      sx={{mr:3, width:"50px", maxHeight:"70px", borderRadius:0, boxShadow:1}}
                       variant="square"
                     />
                   </ListItemIcon>

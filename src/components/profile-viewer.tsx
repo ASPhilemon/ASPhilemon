@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Box, Avatar, Modal } from "@mui/material";
-import dp from "../assets/img/dp.png"
+import dp from "../assets/img/dp.jpg"
 
 const MotionAvatar = motion(Avatar);
 const MotionBox = motion(Box);
