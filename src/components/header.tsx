@@ -8,8 +8,8 @@ import {
 
 
 import ScrollSpy from 'react-scrollspy-navigation';
-
 import ProfilePhotoViewer from './profile-viewer';
+import { scrollTo } from '../util/scrollTo';
 
 export default function Header() {
   return (
@@ -43,17 +43,17 @@ export default function Header() {
             <ScrollSpy activeClass='nav-active' >
               <a 
                 href="#about"
-                onClick = {(e)=>handleLinkClick(e, "about")}
+                onClick = {(e)=>scrollTo(e, "about")}
                 style={{marginRight:"10px", color:"black", fontSize:"17px"}}
               >About</a>
               <a
                 href="#projects"
-                onClick = {(e)=>handleLinkClick(e, "projects")}
+                onClick = {(e)=>scrollTo(e, "projects")}
                 style={{marginRight:"10px", color:"black", fontSize:"17px"}}
               >Projects</a>
               <a
                 href="#trainings"
-                onClick = {(e)=>handleLinkClick(e, "trainings")}
+                onClick = {(e)=>scrollTo(e, "trainings")}
                 style={{marginRight:"auto", color:"black", fontSize:"17px"}}
               >Trainings</a>
             </ScrollSpy>
@@ -61,7 +61,7 @@ export default function Header() {
             <Button
               color='secondary'
               variant="contained"
-              onClick={(e)=>handleLinkClick(e, "contact")}
+              onClick={(e)=>scrollTo(e, "contact")}
             >Get In Touch</Button>
           </Toolbar>
       </AppBar>
