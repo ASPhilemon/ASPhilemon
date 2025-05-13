@@ -1,4 +1,5 @@
-
+import growthspring from "../assets/img/projects/growthspring.png"
+import skilline from "../assets/img/projects/skilline.png"
 
 const projects = [
   {
@@ -34,7 +35,7 @@ const projects = [
     ],
     github: "https:github.com/ASPhilemon/dash-growthspring",
     live: "https://dash.growthspringers.com",
-    photo: "/growthspring.png"
+    photo: growthspring
   },
   {
     name: "Skilline Landing Page",
@@ -52,7 +53,7 @@ const projects = [
     ],
     github: "https:github.com/ASPhilemon/skilline",
     live: "https://skilline.asphilemon.com",
-    photo: "/skilline.png"
+    photo: skilline
   },
 ]
 
