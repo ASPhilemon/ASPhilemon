@@ -18,7 +18,7 @@ import {
   SiJest as JestIcon,
 } from 'react-icons/si';
 
-import { ReactTestingLibIcon } from "../icons/react-testing-lib.tsx"
+import ReactTestingLibImg from "../assets/img/projects/react-testing-lib.png"
 
 import projects from "../data/projects"
 
@@ -90,4 +90,10 @@ const icons = {
   Node: NodeIcon,
   Jest: JestIcon,
   "React Testing Library": ReactTestingLibIcon
+}
+
+function ReactTestingLibIcon(){
+  return(
+    <img width={"25px"} src = { ReactTestingLibImg } />
+  )
 }
