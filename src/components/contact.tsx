@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 import {
   Container,Typography, Button, Box,
-  Paper, TextField,
+  Paper, TextField, Alert
 } from "@mui/material"
 
 import Turnstile from "react-turnstile";
@@ -10,8 +10,8 @@ import Turnstile from "react-turnstile";
 
 export default function Contact(){
   const [humanVerified, setHumanVerified] = useState(false)
-
   const [formStatus, setFormStatus] = useState("typing")
+  const formRef = useRef(null)
 
   console.log("form status", formStatus)
 
@@ -51,15 +51,57 @@ export default function Contact(){
         <Paper
           component={"form"}
           onSubmit = {handleSubmit}
+          ref={formRef}
           sx={{
             minWidth:"300px",
-            maxWidth:"350px",
+            maxWidth:"400px",
             bgcolor:"white",
             px:2,
             py:5,
-            boxShadow:1
+            boxShadow:1,
+            position:"relative",
           }}
         >
+          { formStatus == "error" &&
+            <Alert
+              variant="filled"
+              severity="error"
+              onClose={()=>{
+                setFormStatus("typing")
+              }}
+              sx={{
+                py:2,
+                boxShadow:4,
+                mb:2, position:"absolute",
+                top:0, zIndex:2,
+                left:0,
+                width:"100%",
+              }}
+            >
+              An error occured, please try again.
+            </Alert>
+          }
+          { formStatus == "success" &&
+            <Alert
+              variant="filled"
+              severity="success"
+              onClose={()=>{
+                setFormStatus("typing")
+                const form = formRef.current as unknown as HTMLFormElement
+                form.reset()
+              }}
+              sx={{
+                py:2,
+                boxShadow:4,
+                mb:2, position:"absolute",
+                top:0, zIndex:2,
+                left:0,
+                width:"100%",
+              }}
+            >
+              Your message has been received!
+            </Alert>
+          }
           <TextField
             sx={{mb:3}}
             fullWidth
@@ -68,6 +110,7 @@ export default function Contact(){
             type="text"
             name="name"
             required
+            disabled = {formStatus != "typing"}
           />
           <TextField
             sx={{mb:3}}
@@ -77,6 +120,7 @@ export default function Contact(){
             type="email"
             name="email"
             required
+            disabled = {formStatus != "typing"}
           />
           <TextField
             label="Your message"
@@ -86,8 +130,9 @@ export default function Contact(){
             multiline
             name="message"
             sx={{mb:3}}
+            disabled = {formStatus != "typing"}
           />
-          <Box sx={{ display:humanVerified? "none":"flex", justifyContent:"center"}}>
+          <Box sx={{ display: humanVerified? "none":"flex", justifyContent:"center"}}>
             <Turnstile
               sitekey="0x4AAAAAABLiNjG3UqGkZv9_"
               theme="light"
@@ -100,11 +145,13 @@ export default function Contact(){
               data-size="flexible"
             />
           </Box> 
-          <Box sx={{display:humanVerified? "flex":"none" , justifyContent:"center"}} >
+          <Box sx={{display: humanVerified? "flex":"none" , justifyContent:"center"}} >
             <Button
               variant="contained"
               sx={{bgcolor:"secondary.main", width:"70%", py:2, boxShadow:4}}
               type="submit"
+              disabled = {formStatus != "typing"}
+              loading = {formStatus == "loading"}
             > Submit </Button>
           </Box>
  
