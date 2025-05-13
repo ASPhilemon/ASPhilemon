@@ -7,11 +7,7 @@ a{
 }
 
 .slide-in{
-  animation: slideup forwards 3s;
-}
-
-.slide-in-sm{
-  animation: slideup-sm forwards 2s;
+  animation: slideup forwards 2s;
 }
 
 @keyframes slideup{
@@ -20,6 +16,17 @@ a{
 }
 
 @keyframes slideup-sm{
-  from { transform: translateY(10px);}
+  from { transform: translateY(30px);}
   to { transform: translateY(0);}
+}
+
+.slide-in-sm-fadein{
+  opacity:0;
+  animation: fadein forwards 0s, slideup-sm forwards 3s;
+  animation-delay: 0.5s;
+}
+
+@keyframes fadein{
+  from { opacity: 0;}
+  to { opacity : 1}
 }
