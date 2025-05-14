@@ -23,10 +23,10 @@ export default function Footer(){
         <Link href = "https://github.com/ASPhilemon" sx={{mr:3, color:"white"}}> 
           <GitHub sx={{fontSize:"20px"}} />
         </Link>
-        <Link href = "https://linkedin.com" sx={{mr:3, color:"white"}} >
+        <Link href = "https://www.linkedin.com/in/ariko-philemon-217b0a139/" sx={{mr:3, color:"white"}} >
           <LinkedIn sx={{fontSize:"20px"}} />
         </Link>
-        <Link href = "https://x.com" sx={{color:"white"}} >
+        <Link href = "https://x.com/philemonAriko" sx={{color:"white"}} >
           <X sx={{fontSize:"20px"}} />
         </Link>
       </Box>
