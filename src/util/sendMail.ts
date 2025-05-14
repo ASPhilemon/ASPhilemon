@@ -29,6 +29,9 @@ export async function sendMail({
     },
     body: JSON.stringify(payload),
   });
+  
+  console.log(res)
+  console.log(await res.text())
 
   if (!res.ok) {
     const errorText = await res.text();
