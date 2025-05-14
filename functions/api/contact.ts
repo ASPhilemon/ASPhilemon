@@ -37,15 +37,11 @@ export async function onRequestPost(context) {
     });
   }
 
-  // send email message alert
-  const emailTemplate = "../../src/util/email-body-alert.ejs"
-
   context.waitUntil(
     sendMail({
       recipientEmail:"philemonariko@gmail.com",
       senderName: "contact",
       emailSubject: "Let's Connect",
-      emailTemplate,
       context : {name, email, message}
     })
   )

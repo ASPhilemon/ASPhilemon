@@ -1,41 +1,37 @@
-import nodemailer from "nodemailer"
-import ejs from "ejs"
+import { MailtrapClient } from "mailtrap"
 
-export async function sendMail(
-  {
-    recipientEmail, 
-    senderName,
-    emailSubject,
-    emailTemplate,
-    context,
-  }
-)
-{
-  let emailBody;
+export async function sendMail({
+  recipientEmail,
+  senderName,
+  emailSubject,
+  context
+}) {
+  
+  const { name, email, message } = context;
 
-  let transporter = nodemailer.createTransport({
-    host: "live.smtp.mailtrap.io",
-    port: 587,
-    auth: {
-      user: "api",
-      pass: "2d97f505634eaa761005456acaad2c1f"
-    }
+  const TOKEN = "2d97f505634eaa761005456acaad2c1f";
+
+  const client = new MailtrapClient({
+    token: TOKEN,
   });
 
-  emailBody = await ejs.renderFile(emailTemplate, context)
-  
-  var mailOptions = {
-    from:`<${senderName}@asphilemon.com>`,
-    to: recipientEmail,
-    subject: emailSubject,
-    html: emailBody,
-    //replyTo: 'philemonariko@gmail.com'
+  const sender = {
+    email: "contact@growthspringers.com",
+    name: name || senderName,
   };
-  
-  try{
-    await transporter.sendMail(mailOptions)
-  } catch(err){
-    console.log(err)
-  }
-}
+  const recipients = [
+    {
+      email: recipientEmail,
+    }
+  ];
 
+client
+  .send({
+    from: sender,
+    to: recipients,
+    subject: emailSubject,
+    text: `Message from ${name} <${email}>:\n\n${message}`,
+  })
+  .then(console.log, console.error);
+  
+}
