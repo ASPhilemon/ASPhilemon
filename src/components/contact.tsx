@@ -144,7 +144,7 @@ export default function Contact(){
               refreshExpired="auto"
               retry="auto"
               fixedSize
-              appearance="execute"
+              appearance="always"
               data-size="compact"
             />
           </Box> 
