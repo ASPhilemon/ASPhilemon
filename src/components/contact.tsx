@@ -148,7 +148,7 @@ export default function Contact(){
               data-size="compact"
             />
           </Box> 
-          <Box sx={{display: humanVerified? "flex":"none" , justifyContent:"center"}} >
+          <Box sx={{display: humanVerified? "flex":"none" , justifyContent:"center", height:"80px"}} >
             <Button
               variant="contained"
               sx={{bgcolor:"secondary.main", width:"70%", py:2, boxShadow:4}}
