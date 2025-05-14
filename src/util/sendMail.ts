@@ -35,8 +35,7 @@ export async function sendMail({
 
   if (!res.ok) {
     const errorText = await res.text();
-    throw new Error(`Mailtrap send failed: ${res.status} - ${errorText}`);
+    console.log(Error(`Mailtrap send failed: ${res.status} - ${errorText}`))
   }
 
-  
 }
