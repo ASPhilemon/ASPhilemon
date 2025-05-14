@@ -5,7 +5,7 @@ export async function sendMail({
   emailSubject,
   emailBody,
   MAILTRAP_API_TOKEN
-}) {
+}) {   
   
  const payload = {
     from: {
@@ -22,7 +22,7 @@ export async function sendMail({
   };
 
   const res = await fetch("https://send.api.mailtrap.io/api/send", {
-    method: "POST",
+    method: "POST", 
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${MAILTRAP_API_TOKEN}`,
