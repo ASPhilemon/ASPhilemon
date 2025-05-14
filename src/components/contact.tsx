@@ -138,32 +138,33 @@ export default function Contact(){
             sx={{mb:1}}
             disabled = {formStatus != "typing"}
           />
-          <Box sx={{ display: humanVerified? "none":"flex", justifyContent:"center", height:"110px",}}>
-            <Turnstile
-              sitekey="0x4AAAAAABLiNjG3UqGkZv9_"
-              theme="light"
-              onVerify={()=>{
-                setTimeout(()=>setHumanVerified(true), 2000)
-              }}
-              onExpire={()=>setHumanVerified(false)}
-              refreshExpired="auto"
-              retry="auto"
-              fixedSize
-              appearance="always"
-              data-size="compact"
-            />
-          </Box> 
-          <Box sx={{display: humanVerified? "flex":"none" , justifyContent:"center", height:"110px", alignItems:"center", flexDirection:"column",}} >
-            <img src={turnstileImg} alt="" width={"200px"}  />
-            <Button
-              variant="contained"
-              sx={{bgcolor:"secondary.main", width:"70%", py:2, boxShadow:4, mt:1}}
-              type="submit"
-              disabled = {formStatus != "typing"}
-              loading = {formStatus == "loading"}
-            > Submit </Button>
+          <Box sx={{position:"relative", height:"110px"}} >
+            <Box sx={{ display: humanVerified? "none":"flex", justifyContent:"center", height:"110px", width:"100%", position:"absolute", zIndex:6, background:"white"}}>
+              <Turnstile
+                sitekey="0x4AAAAAABLiNjG3UqGkZv9_"
+                theme="light"
+                onVerify={()=>{
+                  setTimeout(()=>setHumanVerified(true), 2000)
+                }}
+                onExpire={()=>setHumanVerified(false)}
+                refreshExpired="auto"
+                retry="auto"
+                fixedSize
+                appearance="always"
+                data-size="compact"
+              />
+            </Box> 
+            <Box sx={{display: "flex" , justifyContent:"center", alignItems:"center", flexDirection:"column", height:"110px"}} >
+              <img src={turnstileImg} alt="" width={"200px"}  />
+              <Button
+                variant="contained"
+                sx={{bgcolor:"secondary.main", width:"70%", py:2, boxShadow:humanVerified?4:0, mt:1}}
+                type="submit"
+                disabled = {formStatus != "typing"}
+                loading = {formStatus == "loading"}
+              > Submit </Button>
+            </Box>
           </Box>
- 
         </Paper>
       </Box>
     </Container>
