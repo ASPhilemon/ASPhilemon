@@ -3,19 +3,14 @@ export async function sendMail({
   recipientEmail,
   senderName,
   emailSubject,
-  context,
-  emailBody
+  emailBody,
+  MAILTRAP_API_TOKEN
 }) {
   
-  const { name } = context;
-
-  const MAILTRAP_API_TOKEN = "dfa04f6b252a5436c6afc525de9f22ef"
-
-
  const payload = {
     from: {
       email: "contact@growthspringers.com",
-      name: name || senderName,
+      name: senderName,
     },
     to: [
       {
