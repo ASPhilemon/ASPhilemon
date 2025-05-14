@@ -26,7 +26,7 @@ import Typewriter from 'react-ts-typewriter';
 export default function About(){
   const [animationStatus, setAnimationStatus] = useState({greeting:true, about:false})
   const [completed, setCompleted] = useState(0)
-  const greeting = "Hi There, I am Stephen,"
+  const greeting = "Hi There, I am Philemon,"
   const about = `a fullstack web developer based in Kampala, Uganda.
   I have over 2 years experience developing and deploying secure,
   scalable & highly available web applications on the AWS Cloud.`

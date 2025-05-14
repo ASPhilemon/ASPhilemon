@@ -92,8 +92,8 @@ const icons = {
 function IconWrapper({Icon}){
   return(
     <Box sx={{
-      width:"60px",
-      height:"60px",
+      width:"40px",
+      height:"40px",
       transition: "transform 0.3s",
       transformOrigin: "bottom left",
       ":hover": {

@@ -4,53 +4,53 @@ import skilline from "../assets/img/projects/skilline.png"
 const projects = [
   {
     name: "GrowthSpring Records Management System",
-    overview: "GrowthSpring is an internal investment club composed of 50 - 100 members focussed on saving collectively on monthly basis and giving out loans at lower rates to it’s members.",
-    objective: "The project involved building a REST API backend to handle user requests, a personalized member dashboard and an admin dashboard for managing member records.",
-    stack:[
+    overview: "GrowthSpring is a private investment club with 50–100 members, focused on collective monthly savings and issuing low-interest loans to members.",
+    objective: "This project involved building a full-stack web application, including a robust REST API for managing user requests, a personalized dashboard for members, and an admin panel for overseeing all club operations.",
+    stack: [
       {
         name: "Node",
-        purpose: "The backend was developed in the Javascript language and executed with Node.js Runtime",
+        purpose: "Implemented the backend using JavaScript executed in the Node.js runtime for efficient and scalable performance.",
       },
       {
         name: "Express",
-        purpose: "Express.js web framework was utlized for routing and middleware support during the request lifecycle.",
+        purpose: "Used Express.js for structuring server routes, handling middleware, and simplifying the API development process.",
       },
       {
         name: "MongoDB",
-        purpose: "MongoDB flexible schema database was utilized for persisting user data: profile data, loans, deposits etc",
+        purpose: "Leveraged MongoDB's flexible schema to store and manage dynamic data such as user profiles, loan records, savings history, and transactions.",
       },
       {
         name: "React",
-        purpose: "Utlilized React & React Bootstrap for building components for the member and admin dashboard UIs",
+        purpose: "Built responsive and dynamic member/admin dashboards using React and React Bootstrap for a clean, user-friendly experience.",
       },
       {
         name: "Jest",
-        purpose: "Utlilized Jest for unit testing of components.",
+        purpose: "Implemented unit testing with Jest to ensure component stability and catch regressions early in development.",
       },
-
     ],
     github: "https://github.com/ASPhilemon/dash-growthspring",
     live: "https://dash.growthspringers.com",
-    photo: growthspring
+    photo: growthspring,
   },
   {
     name: "Skilline Landing Page",
-    overview: "Skilline is an engaging platform that enhances learning through interactive and immersive experiences.",
-    objective: "The project involved transating figma landing page for Skilline Educational platform into a resposive web page",
-    stack:[
+    overview: "Skilline is an innovative education platform designed to make learning more engaging through interactive, modern design.",
+    objective: "This project entailed transforming a Figma prototype into a pixel-perfect, responsive landing page for Skilline’s educational platform.",
+    stack: [
       {
         name: "React",
-        purpose: "Utlilized React and React Bootstrap for building page components ",
+        purpose: "Utilized React and React Bootstrap to build modular, responsive UI components with clean and maintainable code.",
       },
       {
         name: "Jest",
-        purpose: "Utlilized Jest with React Testing Library for unit testing react components.",
+        purpose: "Employed Jest with React Testing Library to write unit tests that ensured component reliability and user interface consistency.",
       },
     ],
     github: "https://github.com/ASPhilemon/skilline",
     live: "https://skilline.asphilemon.com",
-    photo: skilline
+    photo: skilline,
   },
-]
+];
+
 
 export default projects

@@ -29,136 +29,124 @@ import syncAndAsyncProgramming from "../assets/img/trainings/ibm-node-express/sy
 const trainings = [
   {
     name: "Meta Frontend Developer",
-    about: `The Meta Front-End developer professional
-    certificate is a series of 9 courses on front-endweb
-    development with an in-depth dive into HTML, CSS,
-    JavaScript and the React library.The certificate culminates
-    in a hands-on capstone project.`,
+    about: `The Meta Front-End Developer Professional Certificate is a series of 9 in-depth courses covering modern front-end web development. It focuses on HTML, CSS, JavaScript, and the React library. The program concludes with a hands-on capstone project demonstrating real-world skills.`,
     certificate: metaFrontendCertificate,
-    skills:[
+    skills: [
       {
         name: "Semantic HTML",
-        about: "Using the right HTML jobs for the right job, making pages more understandable to both humans and machines",
-        img: semanticHTML
+        about: "Applied meaningful HTML tags to improve accessibility and SEO, enhancing both human and machine understanding of web content.",
+        img: semanticHTML,
       },
       {
         name: "Responsive Web Design",
-        about: "Adapting the layout of a website for different screen sizes and resolutions",
-        img: responsiveWebDesign
+        about: "Implemented adaptive layouts using media queries and flexible units to ensure seamless experiences across various screen sizes and devices.",
+        img: responsiveWebDesign,
       },
       {
         name: "State Management in React",
-        about: "How to manage state changes in a react app with hooks like useState, useReducer and the context API",
-        img: reactStateManagement
+        about: "Handled complex state in React applications using hooks like useState, useReducer, and the Context API to create dynamic, responsive interfaces.",
+        img: reactStateManagement,
       },
       {
         name: "API Integration",
-        about: "How to integrate a react app with a REST API.",
-        img: apiIntegration
+        about: "Integrated RESTful APIs into React apps using fetch and async/await to handle real-time data fetching and client-server communication.",
+        img: apiIntegration,
       },
       {
         name: "Accesibility",
-        about: "Making web content available to users of all abilities",
-        img: accesibility
+        about: "Built inclusive web experiences by applying ARIA roles, semantic tags, and keyboard navigation support for users of all abilities.",
+        img: accesibility,
       },
       {
         name: "Version Control",
-        about: "Source control using GIT",
-        img: git
+        about: "Utilized Git for source control—tracking changes, branching, and managing project history in collaborative development environments.",
+        img: git,
       },
       {
         name: "GitHub",
-        about: "How to collaborate effectively with a team on GitHub",
-        img: github
+        about: "Collaborated on projects using GitHub by managing repositories, handling pull requests, and participating in code reviews.",
+        img: github,
       },
       {
         name: "Unit Testing",
-        about: "Carrying out unit tests of react components using Jest and React Testing Library ",
-        img: unitTesting
+        about: "Wrote unit tests for React components using Jest and React Testing Library to ensure reliability, catch bugs, and maintain code quality.",
+        img: unitTesting,
       },
     ],
     capstone: {
       github: "https://github.com/ASPhilemon/meta-frontend-capstone.git",
-      live: "https://meta-frontend.asphilemon.com"
-    }
-
+      live: "https://meta-frontend.asphilemon.com",
+    },
   },
   {
     name: "Meta Backend Developer",
-    about: `The Meta Back-End developer professional certificate is
-    a series of 9 courses on backendweb development with a focus on python,
-    Django Web framework, Django Rest Framework& MySQL database.
-    The certificate culminates in a hands-on capstone project`,
+    about: `The Meta Back-End Developer Professional Certificate consists of 9 courses focused on backend development using Python, the Django Web Framework, Django REST Framework, and MySQL. The curriculum ends with a practical capstone project.`,
     certificate: metaBackendCertificate,
-    skills:[
+    skills: [
       {
         name: "Programming in Python",
-        about: "Basic to adavanced python concepts, object oriented programming in python",
-        img: python
+        about: "Gained mastery of Python fundamentals, object-oriented programming, error handling, and scripting for backend services.",
+        img: python,
       },
       {
         name: "Django Web Framework",
-        about: "How to work with Django Web Framework",
-        img: djangoWebFramework
+        about: "Built full-featured web applications using Django’s built-in tools for routing, templating, forms, and authentication.",
+        img: djangoWebFramework,
       },
       {
         name: "Django REST Framework",
-        about: "How to work with Django REST Framework",
-        img: djangoRESTFramework
+        about: "Developed scalable RESTful APIs with Django REST Framework, including serialization, viewsets, and token-based authentication.",
+        img: djangoRESTFramework,
       },
       {
         name: "Database Design",
-        about: "How to design a database",
-        img: databaseDesign
+        about: "Designed normalized relational databases and structured schemas for efficient data retrieval and integrity using SQL and Django ORM.",
+        img: databaseDesign,
       },
       {
         name: "REST API Design",
-        about: "How to Design a REST API",
-        img: restAPIDesign
+        about: "Learned best practices in structuring and documenting REST APIs, including endpoint conventions and HTTP status codes.",
+        img: restAPIDesign,
       },
       {
         name: "Unit Testing",
-        about: "Carrying out unit tests with Pytest",
-        img: pytest
+        about: "Wrote and executed unit tests with Pytest to validate backend logic, models, and endpoints, ensuring system reliability.",
+        img: pytest,
       },
     ],
     capstone: {
       github: "https://github.com/ASPhilemon/meta-backend-capstone.git",
-    }
-
+    },
   },
   {
-    name:"IBM Developing Backend Apps With Nodejs & Express",
-    about: `The IBM ​Developing Back-End Apps with Node.js and Express is
-    an intermediate-level course designed to equip learners with
-    practical skills in building server-side applications using 
-    Node.js and Express.js.`,
+    name: "IBM Developing Backend Apps With Nodejs & Express",
+    about: `This intermediate-level IBM course equips learners with practical skills in building server-side applications using Node.js and the Express.js framework. It emphasizes the architecture of Node and core backend concepts.`,
     certificate: IBMNodeExpressCertificate,
-    skills:[
+    skills: [
       {
         name: "Nodejs Architecture",
-        about: "The differeng components of a nodejs runtime; the event queue, callstack, the event loop and libuv thread pool",
-        img: nodeArchitecture
+        about: "Explored Node.js internals such as the call stack, event loop, event queue, and the libuv thread pool for non-blocking I/O.",
+        img: nodeArchitecture,
       },
       {
         name: "Synchronous & Asyncronous Programming",
-        about: "How to work with synchronous and asynchronous code in nodejs using callbacks, promises & async/await",
-        img: syncAndAsyncProgramming
+        about: "Handled both synchronous and asynchronous operations using callbacks, Promises, and async/await patterns in Node.js.",
+        img: syncAndAsyncProgramming,
       },
       {
         name: "Express Web Framework",
-        about: "How to work with Express Web Framework",
-        img: expressWebFramework
+        about: "Built RESTful APIs and middleware pipelines using Express.js, handling routes, errors, and server responses.",
+        img: expressWebFramework,
       },
       {
         name: "Package Management",
-        about: "How to work with package.json and npm package manager",
-        img: npm
+        about: "Managed project dependencies using npm, configured scripts via package.json, and worked with common Node.js packages.",
+        img: npm,
       },
     ],
-    capstone: {}
+    capstone: {},
   },
-  
-]
+];
+
 
 export default trainings
