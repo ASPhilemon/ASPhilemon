@@ -1,4 +1,3 @@
-import { MailtrapClient } from "mailtrap"
 
 export async function sendMail({
   recipientEmail,
@@ -9,29 +8,36 @@ export async function sendMail({
   
   const { name, email, message } = context;
 
-  const TOKEN = "2d97f505634eaa761005456acaad2c1f";
+  const MAILTRAP_API_TOKEN = "2d97f505634eaa761005456acaad2c1f";
 
-  const client = new MailtrapClient({
-    token: TOKEN,
-  });
 
-  const sender = {
-    email: "contact@growthspringers.com",
-    name: name || senderName,
-  };
-  const recipients = [
-    {
-      email: recipientEmail,
-    }
-  ];
-
-client
-  .send({
-    from: sender,
-    to: recipients,
+ const payload = {
+    from: {
+      email: "contact@growthspringers.com",
+      name: name || senderName,
+    },
+    to: [
+      {
+        email: recipientEmail,
+      },
+    ],
     subject: emailSubject,
     text: `Message from ${name} <${email}>:\n\n${message}`,
-  })
-  .then(console.log, console.error);
+  };
+
+  const res = await fetch("https://send.api.mailtrap.io/api/send", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${MAILTRAP_API_TOKEN}`,
+    },
+    body: JSON.stringify(payload),
+  });
+
+  if (!res.ok) {
+    const errorText = await res.text();
+    throw new Error(`Mailtrap send failed: ${res.status} - ${errorText}`);
+  }
+
   
 }
