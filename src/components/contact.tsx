@@ -138,7 +138,7 @@ export default function Contact(){
             sx={{mb:1}}
             disabled = {formStatus != "typing"}
           />
-          <Box sx={{ display: humanVerified? "none":"flex", justifyContent:"center", height:"80px",}}>
+          <Box sx={{ display: humanVerified? "none":"flex", justifyContent:"center", height:"110px",}}>
             <Turnstile
               sitekey="0x4AAAAAABLiNjG3UqGkZv9_"
               theme="light"
