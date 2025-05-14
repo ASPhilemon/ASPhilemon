@@ -47,7 +47,7 @@ export async function onRequestPost(context) {
     })
   )
 
-    context.waitUntil(
+  context.waitUntil(
     sendMail({
       recipientEmail:email,
       senderName: "contact",

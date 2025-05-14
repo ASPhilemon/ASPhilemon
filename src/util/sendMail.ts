@@ -7,9 +7,9 @@ export async function sendMail({
   emailBody
 }) {
   
-  const { name, email, message } = context;
+  const { name } = context;
 
-  const MAILTRAP_API_TOKEN = "2d97f505634eaa761005456acaad2c1f";
+  const MAILTRAP_API_TOKEN = "dfa04f6b252a5436c6afc525de9f22ef"
 
 
  const payload = {
