@@ -29,7 +29,7 @@ const projects = [
       },
 
     ],
-    github: "https:github.com/ASPhilemon/dash-growthspring",
+    github: "https://github.com/ASPhilemon/dash-growthspring",
     live: "https://dash.growthspringers.com",
     photo: growthspring
   },
@@ -47,7 +47,7 @@ const projects = [
         purpose: "Utlilized Jest with React Testing Library for unit testing react components.",
       },
     ],
-    github: "https:github.com/ASPhilemon/skilline",
+    github: "https://github.com/ASPhilemon/skilline",
     live: "https://skilline.asphilemon.com",
     photo: skilline
   },
