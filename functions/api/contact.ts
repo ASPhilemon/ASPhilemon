@@ -42,7 +42,18 @@ export async function onRequestPost(context) {
       recipientEmail:"philemonariko@gmail.com",
       senderName: "contact",
       emailSubject: "Let's Connect",
-      context : {name, email, message}
+      context : {name, email, message},
+      emailBody: `Message from ${name} <${email}>:\n\n${message}`,
+    })
+  )
+
+    context.waitUntil(
+    sendMail({
+      recipientEmail:email,
+      senderName: "contact",
+      emailSubject: "Message Confirmation",
+      context : {name, email, message},
+      emailBody: `Dear ${name.split(" ")[0]} <${email}>:\n\nI have received your message\n\nYour Message:\n ${message}\n\nThanks for reaching out. I will get back to you as soon as possible`,
     })
   )
 

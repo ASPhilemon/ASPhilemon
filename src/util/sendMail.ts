@@ -3,7 +3,8 @@ export async function sendMail({
   recipientEmail,
   senderName,
   emailSubject,
-  context
+  context,
+  emailBody
 }) {
   
   const { name, email, message } = context;
@@ -22,7 +23,7 @@ export async function sendMail({
       },
     ],
     subject: emailSubject,
-    text: `Message from ${name} <${email}>:\n\n${message}`,
+    text: emailBody
   };
 
   const res = await fetch("https://send.api.mailtrap.io/api/send", {
