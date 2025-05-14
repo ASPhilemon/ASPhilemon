@@ -43,7 +43,7 @@ export async function onRequestPost(context) {
     sendMail({
       recipientEmail:"philemonariko@gmail.com",
       senderName: name,
-      emailSubject: "Let's Connect",
+      emailSubject: `Let's Connect - ${name} `,
       emailBody: `Message from ${name} <${email}>:\n\n${message}`,
       MAILTRAP_API_TOKEN
     })
