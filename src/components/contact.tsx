@@ -6,6 +6,7 @@ import {
 } from "@mui/material"
 
 import Turnstile, {useTurnstile} from "react-turnstile";
+import turnstileImg from "../assets/img/turnstile.jpg"
 
 
 export default function Contact(){
@@ -134,15 +135,15 @@ export default function Contact(){
             fullWidth
             multiline
             name="message"
-            sx={{mb:3}}
+            sx={{mb:1}}
             disabled = {formStatus != "typing"}
           />
-          <Box sx={{ display: humanVerified? "none":"flex", justifyContent:"center", height:"80px"}}>
+          <Box sx={{ display: humanVerified? "none":"flex", justifyContent:"center", height:"80px",}}>
             <Turnstile
               sitekey="0x4AAAAAABLiNjG3UqGkZv9_"
               theme="light"
               onVerify={()=>{
-                setTimeout(()=>setHumanVerified(true), 1500)
+                setTimeout(()=>setHumanVerified(true), 2000)
               }}
               onExpire={()=>setHumanVerified(false)}
               refreshExpired="auto"
@@ -152,10 +153,11 @@ export default function Contact(){
               data-size="compact"
             />
           </Box> 
-          <Box sx={{display: humanVerified? "flex":"none" , justifyContent:"center", height:"80px", alignItems:"center"}} >
+          <Box sx={{display: humanVerified? "flex":"none" , justifyContent:"center", height:"110px", alignItems:"center", flexDirection:"column",}} >
+            <img src={turnstileImg} alt="" width={"200px"}  />
             <Button
               variant="contained"
-              sx={{bgcolor:"secondary.main", width:"70%", py:2, boxShadow:4}}
+              sx={{bgcolor:"secondary.main", width:"70%", py:2, boxShadow:4, mt:1}}
               type="submit"
               disabled = {formStatus != "typing"}
               loading = {formStatus == "loading"}
