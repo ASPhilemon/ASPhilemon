@@ -1,3 +1,5 @@
+import { sendMail  } from "../../src/util/sendMail"
+
 export async function onRequestPost(context) {
   const formData = await context.request.formData();
 
@@ -35,8 +37,18 @@ export async function onRequestPost(context) {
     });
   }
 
-  // Process the form
-  console.log(`Received message from ${name} (${email}): ${message}`);
+  // send email message alert
+  const emailTemplate = "../../src/util/email-body-alert.ejs"
+
+  context.waitUntil(
+    sendMail({
+      recipientEmail:"philemonariko@gmail.com",
+      senderName: "contact",
+      emailSubject: "Let's Connect",
+      emailTemplate,
+      context : {name, email, message}
+    })
+  )
 
   return new Response(JSON.stringify({ success: true }), {
     status: 200,
