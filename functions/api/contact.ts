@@ -54,7 +54,7 @@ export async function onRequestPost(context) {
       recipientEmail:email,
       senderName: "contact",
       emailSubject: "Message Confirmation",
-      emailBody: `Dear ${name.split(" ")[0]},\n\nI have received your message.\nYour Message:\n\n ${message}\n\nThanks for reaching out. I will get back to you as soon as possible.\\nGreetings,\nPhilemon`,
+      emailBody: `Dear ${name.split(" ")[0]},\n\nI have received your message.\n<h1>Your Message:</h1>\n\n ${message}\n\nThanks for reaching out. I will get back to you as soon as possible.\n\nGreetings,\nPhilemon`,
       MAILTRAP_API_TOKEN
     })
   )
