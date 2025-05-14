@@ -5,13 +5,14 @@ import {
   Paper, TextField, Alert
 } from "@mui/material"
 
-import Turnstile from "react-turnstile";
+import Turnstile, {useTurnstile} from "react-turnstile";
 
 
 export default function Contact(){
   const [humanVerified, setHumanVerified] = useState(false)
   const [formStatus, setFormStatus] = useState("typing")
   const formRef = useRef(null)
+  const turnstile = useTurnstile()
 
   console.log("form status", formStatus)
 
@@ -68,6 +69,7 @@ export default function Contact(){
               severity="error"
               onClose={()=>{
                 setFormStatus("typing")
+                turnstile.reset()
               }}
               sx={{
                 py:2,
@@ -89,6 +91,7 @@ export default function Contact(){
                 setFormStatus("typing")
                 const form = formRef.current as unknown as HTMLFormElement
                 form.reset()
+                turnstile.reset()
               }}
               sx={{
                 py:2,
@@ -132,7 +135,7 @@ export default function Contact(){
             sx={{mb:3}}
             disabled = {formStatus != "typing"}
           />
-          <Box sx={{ display: humanVerified? "none":"flex", justifyContent:"center"}}>
+          <Box sx={{ display: humanVerified? "none":"flex", justifyContent:"center", height:"80px"}}>
             <Turnstile
               sitekey="0x4AAAAAABLiNjG3UqGkZv9_"
               theme="light"
@@ -142,7 +145,7 @@ export default function Contact(){
               retry="auto"
               fixedSize
               appearance="execute"
-              data-size="flexible"
+              data-size="compact"
             />
           </Box> 
           <Box sx={{display: humanVerified? "flex":"none" , justifyContent:"center"}} >
