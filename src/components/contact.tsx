@@ -69,6 +69,7 @@ export default function Contact(){
               severity="error"
               onClose={()=>{
                 setFormStatus("typing")
+                setHumanVerified(false)
                 turnstile.reset()
               }}
               sx={{
@@ -91,6 +92,7 @@ export default function Contact(){
                 setFormStatus("typing")
                 const form = formRef.current as unknown as HTMLFormElement
                 form.reset()
+                setHumanVerified(false)
                 turnstile.reset()
               }}
               sx={{
@@ -148,7 +150,7 @@ export default function Contact(){
               data-size="compact"
             />
           </Box> 
-          <Box sx={{display: humanVerified? "flex":"none" , justifyContent:"center", height:"80px"}} >
+          <Box sx={{display: humanVerified? "flex":"none" , justifyContent:"center", height:"80px", alignItems:"center"}} >
             <Button
               variant="contained"
               sx={{bgcolor:"secondary.main", width:"70%", py:2, boxShadow:4}}
