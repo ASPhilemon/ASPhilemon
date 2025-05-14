@@ -141,7 +141,9 @@ export default function Contact(){
             <Turnstile
               sitekey="0x4AAAAAABLiNjG3UqGkZv9_"
               theme="light"
-              onVerify={()=>setHumanVerified(true)}
+              onVerify={()=>{
+                setTimeout(()=>setHumanVerified(true), 1500)
+              }}
               onExpire={()=>setHumanVerified(false)}
               refreshExpired="auto"
               retry="auto"
