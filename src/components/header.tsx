@@ -18,7 +18,7 @@ const NavLink = styled(Link)(({ theme }) => ({
   fontSize: 16,
   color: "white",
   ":hover": {
-    color: theme.palette.secondary.light
+    color: "#ffd54f"
   }
 }));
 
