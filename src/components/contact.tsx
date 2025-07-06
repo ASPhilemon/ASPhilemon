@@ -136,8 +136,8 @@ export default function Contact(){
             sx={{mb:1}}
             disabled = {formStatus != "typing"}
           />
-          <Box sx={{position:"relative", height:"110px"}} >
-            <Box sx={{ display: humanVerified? "none":"flex", justifyContent:"center", height:"110px", width:"100%", position:"absolute", zIndex:6}}>
+          <Box sx={{position:"relative", height:"60px"}} >
+            <Box sx={{ display: humanVerified? "none":"flex", justifyContent:"center", height:"60px", width:"100%", position:"absolute", zIndex:6}}>
               <Turnstile
                 sitekey="0x4AAAAAABLiNjG3UqGkZv9_"
                 theme="light"
@@ -152,11 +152,12 @@ export default function Contact(){
                 data-size="compact"
               />
             </Box> 
-            <Box sx={{display: humanVerified? "flex":"none" , justifyContent:"center", alignItems:"center", flexDirection:"column", height:"110px"}} >
-              <img src={turnstileImg}  alt="" width={"200px"}  />
+            <Box sx={{display: humanVerified? "flex":"none" , height:"60px", justifyContent:"center", alignItems:"center", flexDirection:"column"}} >
+              {/* <img src={turnstileImg}  alt="" width={"200px"}  /> */}
               <Button
                 variant="contained"
-                sx={{ width:"70%", py:2, boxShadow:humanVerified?4:0, mt:1}}
+                size="large"
+                sx={{ boxShadow:humanVerified?4:0, mt:2, px: 4, py:1}}
                 type="submit"
                 disabled = {formStatus != "typing"}
                 loading = {formStatus == "loading"}

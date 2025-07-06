@@ -37,7 +37,7 @@ export default function About(){
     <Box sx={{ maxWidth: 500, marginLeft:0 }}>
       <Box sx={{mx:"auto", mb:1}} >
         <Typography
-          sx={{mb:2, fontWeight:"bold", color:"primary.main"}}
+          sx={{mb:2, fontWeight:"bold", color:"primary.dark"}}
           variant="h5"
         >Hi There,
         </Typography>
