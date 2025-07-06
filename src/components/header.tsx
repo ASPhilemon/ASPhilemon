@@ -1,13 +1,13 @@
 import { cloneElement } from 'react';
 
 import {
-  Container, Grid, AppBar, Toolbar,
+  Container, Grid, Toolbar,
   Button, Typography,
   useScrollTrigger,
   Link,
   styled,
-  Box,
   Avatar,
+  AppBar,
 } from '@mui/material';
 import dp from "../assets/img/dp.jpg"
 
@@ -24,13 +24,14 @@ const NavLink = styled(Link)(({ theme }) => ({
 
 export default function Header() {
   return (
-    <Box sx={{backgroundColor: "primary.main"}} >
+    <>
       <Container
         maxWidth={false}
         sx={{
           pt:2,
           pb:3,
           px:{md:5},
+          backgroundColor: "primary.main"
         }}
       >
         <Grid container sx={{alignItems:"center", flexWrap:"nowrap",}} >
@@ -67,7 +68,7 @@ export default function Header() {
         </Grid>
       </Container>
       <ElevationScroll >
-        <AppBar sx={{position:"sticky"}}>
+        <AppBar sx={{position:"sticky", top:0, backgroundColor: "primary.main", zIndex: 1,}}>
           <Toolbar
             sx={{
               py:2,
@@ -77,6 +78,7 @@ export default function Header() {
             <ScrollSpy activeClass='nav-active' >
               <NavLink 
                 href="#about"
+                underline='none'
                 onClick = {(e)=>scrollTo(e, "about")}
                 style={{
                   marginRight:8,
@@ -86,11 +88,13 @@ export default function Header() {
                 href="#projects"
                 onClick = {(e)=>scrollTo(e, "projects")}
                 style={{marginRight:8,}}
+                underline='none'
               >Projects</NavLink>
               <NavLink
                 href="#trainings"
                 onClick = {(e)=>scrollTo(e, "trainings")}
                 style={{marginRight:"auto",}}
+                underline='none'
               >Trainings</NavLink>
             </ScrollSpy>
 
@@ -104,7 +108,7 @@ export default function Header() {
           </Toolbar>
         </AppBar>
       </ElevationScroll>
-    </Box>
+    </>
   );
 }
 
