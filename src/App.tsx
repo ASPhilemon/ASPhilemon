@@ -1,22 +1,23 @@
 import { CssBaseline } from "@mui/material"
 import { ThemeProvider, createTheme } from "@mui/material/styles"
+import { deepOrange, blue, } from "@mui/material/colors";
 import Page from "./page";
 
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: "#03a9f4",
-      light: "#e1f5fe",
-      dark: "#01579b",
-    },
-    secondary: {
-      main: "#FF773D"
-    }
-  },
-});
+
 
 
 function App() {
+const theme = createTheme({
+  palette: {
+    primary: {
+      light: blue[50],  
+      main: blue[500],
+      contrastText: '#fff',
+    },
+    secondary: deepOrange
+  },
+});
+    
   return (
     <ThemeProvider theme={theme} >
       <CssBaseline/>

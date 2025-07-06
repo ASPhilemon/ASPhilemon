@@ -1,7 +1,7 @@
 const techStack = [
-  "MongoDB", "Express", "React", 
-  "Node", "Bootstrap", "MaterialUI",
-  "Docker",
+  "MongoDB", "MySQL", "Express", 
+  "Node", "Typescript",  "Python", "React",  "Bootstrap", "MaterialUI",
+  "Docker", "AWS", 
 ]
 
 export default techStack

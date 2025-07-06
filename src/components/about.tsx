@@ -1,6 +1,7 @@
 import {
   Container, Typography, Box,
   Button, Grid, Chip,
+  styled,
 } from "@mui/material"
 
 import {
@@ -12,99 +13,66 @@ import {
 
 import {
   SiMongodb as MongoIcon,
+  SiMysql as MySQLIcon,
   SiExpress as ExpressIcon,
-  SiMaterialdesign as MuiIcon
+  SiMaterialdesign as MuiIcon,
+  SiPython as PythonIcon,
+  SiTypescript as TypescriptIcon,
+  SiAmazonwebservices as AWSIcon,
 } from 'react-icons/si';
 
-import { useState, useEffect } from "react";
-
 import techStack from "../data/techstack";
-
-import Typewriter from 'react-ts-typewriter';
+import aboutDp from "../assets/img/about-dp.jpg"
 
 
 export default function About(){
-  const [animationStatus, setAnimationStatus] = useState({greeting:true, about:false})
-  const [completed, setCompleted] = useState(0)
-  const greeting = "Hi There, I am Philemon,"
-  const about = `a fullstack web developer based in Kampala, Uganda.
-  I have over 2 years experience developing and deploying secure,
-  scalable & highly available web applications on the AWS Cloud.`
 
   return(
-    <Container id="about" >
-      <Typography sx={{ textAlign:"center", mt:4, mb:2, color:"primary.main",}}  variant='h5' >About Me</Typography>
-      <Box sx={{maxWidth:400, fontWeight:"light", mx:"auto"}} >
-        <Box sx={{ fontWeight:"bold", mb:1}} >
-          <TypewriterWrapper
-            text = {greeting}
-            animation="greeting"
-            setAnimationStatus={setAnimationStatus}
-            animationStatus={animationStatus}
-            nextAnimation={'about'}
-            setCompleted = {setCompleted}
-            showWait={1000}
-          />
-        </Box>
-        <Box sx={{fontWeight:"light"}} >
-          <TypewriterWrapper
-              text = {about}
-              animation="about"
-              setAnimationStatus={setAnimationStatus}
-              animationStatus={animationStatus}
-              nextAnimation={"contact"}
-              setCompleted={setCompleted}
-              showWait={1000}
-          />
-        </Box>
-  
+  <Container maxWidth ={false} id="about" sx={{
+     py:8, display: "flex", justifyContent:"center",
+     alignItems:"start", px: {lg: 20},
+    }}
+  >
+
+    <Box sx={{ maxWidth: 500, marginLeft:0 }}>
+      <Box sx={{mx:"auto", mb:1}} >
+        <Typography
+          sx={{mb:2, fontWeight:"bold", color:"primary.main"}}
+          variant="h5"
+        >Hi There,
+        </Typography>
+        <Typography>
+          I am <Box component={"span"} sx={{fontWeight:"bold"}} >Philemon,</Box>  a fullstack developer based in Kampala, Uganda.
+          I have over 2 years experience developing and deploying
+          <Box component={"span"} sx={{fontWeight:"bold"}} > secure, scalable & highly available</Box> applications on the AWS Cloud.
+        </Typography>
       </Box>
-      <Box sx={{position:"relative", maxWidth:400, mx:"auto"}} >
-        <Box sx={{visibility:"hidden"}} >
-          <TechStack />
-        </Box>
-        { completed >=2 &&  
-          <div style={{position:"absolute", left:0, top:0}} className="slide-in" >
-            <TechStack/>
-          </div>
-        }
+      <Box sx={{maxWidth:400, mx:"auto"}} >
+        <TechStack/>
       </Box>
-      <Box sx={{ mb:2, textAlign:"center"}} >
-        <TypewriterWrapper
-          text = {"Need a fullstack dev on your team?"}
-          animation="contact"
-          setAnimationStatus={setAnimationStatus}
-          animationStatus={animationStatus}
-          nextAnimation={null}
-          setCompleted={setCompleted}
-          showWait={12000}
-        />
+      <Typography sx={{textAlign:"center", mb:3}} >Need a fullstack dev on your team?</Typography>
+      <Box sx={{ maxWidth:500, mx:"auto", textAlign:"center"}} >
+        <Button
+          variant='contained'
+          size="large"
+          color="secondary"
+          href="#contact"
+          sx={{display:"inline-flex", mx:"auto",}}
+          onClick={(e)=>handleLinkClick(e, "contact")}
+        >Get In Touch</Button>
       </Box>
-      <Box sx={{position:"relative", maxWidth:500, mx:"auto"}} >
-        <Box sx={{visibility:"hidden"}} >
-          <Button color='secondary'  variant='contained' sx={{display:"flex", mx:"auto", py:1.8, px:3}} >Get In Touch</Button>
-        </Box>
-          { completed >=3 &&  
-            <div style={{position:"absolute", left:0, top:0, width:"100%"}} className="slide-in-sm-fadein" >
-              <Button
-                href="#contact"
-                color='secondary'
-                variant='contained'
-                sx={{display:"flex", mx:"auto", py:1.8, px:3, width:"180px"}}
-                onClick = {(e)=>handleLinkClick(e, "contact")}
-              > Get In Touch </Button>
-            </div>
-          }
-        </Box>
-    </Container>
+    </Box>
+    <Box
+      component={"img"}
+      src={aboutDp}
+      width={300}
+      sx={{ borderRadius: 1, marginLeft: "auto", boxShadow: 1, display:{xs: "none", md:"block"}}}
+    />
+  </Container>
   )
 }
 
 function TechStack(){
-  const [show, setShow] = useState(false)
-  useEffect(()=>{
-    setTimeout(()=>setShow(true), 500)
-  })
   return(
     <Grid
       spacing={1}
@@ -115,7 +83,7 @@ function TechStack(){
         techStack.map((tool)=>{
           const Icon = icons[tool]
           return(
-            <Grid key={tool} ><Chip sx={{opacity: show? 1:0, minWidth:90}} icon = {<Icon/> } label={tool} /> </Grid>
+            <Grid key={tool} ><TechChip sx={{minWidth:90}} icon = {<Icon color = "white" /> } label={tool} /> </Grid>
           )
         })
       } 
@@ -125,62 +93,25 @@ function TechStack(){
   )
 }
 
+const TechChip = styled(Chip)(({ theme }) => ({
+  minWidth: 90,
+  color: "white",
+  backgroundColor: theme.palette.primary.dark
+}));
+
 const icons = {
   React: ReactIcon,
   MongoDB: MongoIcon,
+  MySQL: MySQLIcon,
   Express: ExpressIcon,
   Node: NodeIcon,
+  Python: PythonIcon,
   MaterialUI: MuiIcon,
   Bootstrap: BootstrapIcon,
-  Docker: DockerIcon
+  Docker: DockerIcon,
+  AWS: AWSIcon,
+  Typescript: TypescriptIcon
 }
-
-function TypewriterWrapper({
-  text,
-  setAnimationStatus,
-  animation,
-  nextAnimation,
-  animationStatus,
-  setCompleted,
-  showWait
-}){
-  const [show, setShow] = useState(false)
-  const [hasFinished, setHasFinished] = useState(false)
-
-  useEffect(()=>{
-    setTimeout(()=>setShow(true), showWait)
-  }, [])
-
-  return (
-    <Box sx={{position:"relative"}} >
-      <Box sx={{visibility:"hidden"}} >
-        {text}
-      </Box>
-     { show &&
-      <Box sx={{position:"absolute", left:0, top:0, width:"100%"}} >
-        {
-          animationStatus[animation] &&
-          <Typewriter
-            speed={20}
-            text = {text}
-            cursor = {false}
-            onFinished={()=>{
-              setHasFinished(true)
-              if (!hasFinished) setCompleted((prev)=>prev+1)
-              if (nextAnimation && !hasFinished) {
-                setAnimationStatus({...animationStatus, [nextAnimation]:true})
-              }
-            }}
-        />
-        }
-
-      </Box>
-      }
-    </Box>
-
-  )
-}
-
 
 function handleLinkClick(e, toId){
   e.preventDefault();

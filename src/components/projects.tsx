@@ -19,12 +19,14 @@ import {
   SiJest as JestIcon,
 } from 'react-icons/si';
 
+import { blue } from "@mui/material/colors";
+
 import projects from "../data/projects"
 
 export default function Projects(){
   return(
-    <Container id="projects" maxWidth={false} sx={{ mt:5, pb:4, bgcolor:"primary.light"}} >
-      <Typography color='primary.main' variant='h5' sx={{textAlign: "center", py:3, fontWeight:600}} >Projects</Typography>
+    <Container id="projects" maxWidth={false} sx={{py:3, backgroundColor:"primary.light"}} >
+      <Typography variant='h5' sx={{textAlign: "center", py:3, fontWeight:600, color: "primary.main"}} >Projects</Typography>
       <Grid container rowSpacing={3} columnSpacing={2} sx={{justifyContent:"center", alignItems:"stretch"}} >
         {
           projects.map((project, index)=>{
@@ -47,16 +49,16 @@ function Project({project}){
         image={project.photo}
       />
       <CardContent>
-        <Typography sx={{fontSize: 18}} gutterBottom variant="h6">
+        <Typography sx={{fontSize: 18, color:"primary.dark"}} gutterBottom variant="h6">
           {project.name}
         </Typography>
-        <Typography sx={{ color: 'text.secondary', mb:2 }}>
+        <Typography sx={{  mb:2 }}>
           {project.overview}
         </Typography>
-        <Typography sx={{ color: 'text.secondary' }}>
+        <Typography sx={{}}>
           {project.objective}
         </Typography>
-        <Typography sx={{fontSize: 17, mt:2, mb:0, color:"primary.main", fontWeight:900}}  gutterBottom variant="h6" >
+        <Typography sx={{fontSize: 17, mt:2, mb:0, fontWeight:900, color:"primary.dark"}}  gutterBottom variant="h6" >
           Project Stack
         </Typography>
         <List>
@@ -74,8 +76,8 @@ function Project({project}){
         </List>
       </CardContent>
       <CardActions sx={{display:"flex", justifyContent:"center"}} >
-        <Button href={project.github} variant='outlined' startIcon = {<GitHubIcon/>} endIcon = {<ArrowOutwardIcon/>} target='blank' color='secondary' component="a" size="small" sx={{mr:2}}>REPO</Button>
-        <Button href={project.live} variant='outlined' startIcon = {<WebIcon/>} endIcon = {<ArrowOutwardIcon/>} target='blank' color='secondary' component="a" size="small">Live</Button>
+        <Button color="secondary" href={project.github} variant='outlined' startIcon = {<GitHubIcon/>} endIcon = {<ArrowOutwardIcon/>} target='blank' component="a" size="small" sx={{mr:2}}>REPO</Button>
+        <Button color="secondary" href={project.live} variant='outlined' startIcon = {<WebIcon/>} endIcon = {<ArrowOutwardIcon/>} target='blank' component="a" size="small">Live</Button>
       </CardActions>
     </Card>
   )
@@ -96,15 +98,15 @@ function IconWrapper({Icon}){
       height:"40px",
       transition: "transform 0.3s",
       transformOrigin: "bottom left",
+      background:"white",
       ":hover": {
         transform: "scale(3, 3)",
         transformOrigin:"bottom left"},
         boxShadow:1,
-        background:"white",
         p:1,
         mr:2
     }}>
-      <Icon size = "100%" color = "grey" />
+      <Icon color={blue[300]} size = "100%" />
     </Box>
   )
 }

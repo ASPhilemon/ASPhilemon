@@ -4,70 +4,107 @@ import {
   Container, Grid, AppBar, Toolbar,
   Button, Typography,
   useScrollTrigger,
+  Link,
+  styled,
+  Box,
+  Avatar,
 } from '@mui/material';
-
+import dp from "../assets/img/dp.jpg"
 
 import ScrollSpy from 'react-scrollspy-navigation';
-import ProfilePhotoViewer from './profile-viewer';
 import { scrollTo } from '../util/scrollTo';
+
+const NavLink = styled(Link)(({ theme }) => ({
+  fontSize: 16,
+  color: "white",
+  ":hover": {
+    color: theme.palette.secondary.light
+  }
+}));
 
 export default function Header() {
   return (
-    <>
+    <Box sx={{backgroundColor: "primary.main"}} >
       <Container
         maxWidth={false}
         sx={{
           pt:2,
-          background:"linear-gradient(90deg,rgb(1, 112, 164), #01579b 30%, #01579b 70%,  #047cb4)",
           pb:3,
-          px:{md:16}
+          px:{md:5},
         }}
       >
         <Grid container sx={{alignItems:"center", flexWrap:"nowrap",}} >
           <Grid size={6} sx={{mr:"auto"}} >
-            <Typography sx={{textShadow:'2px 2px 4px rgba(0,0,0,0.3)', fontWeight:"light", letterSpacing:{xs:1.2, md:3}, color:"white"}} variant="h6" >ARIKO STEPHEN PHILEMON</Typography>
+            <Typography
+              sx = {{
+                textShadow:'2px 2px 4px rgba(0,0,0,0.3)',
+                fontWeight:"bold",
+                letterSpacing:{xs:1.2, md:3},
+                color:"primary.contrastText"
+              }}
+              variant="h6"
+            >
+              ARIKO STEPHEN PHILEMON
+            </Typography>
           </Grid>
-          <ProfilePhotoViewer/>
+          <Avatar
+            src={dp}
+            alt="Profile Photo"
+            sx={{
+              width: 80, height: 80,
+              borderRadius: 2, cursor:"pointer",
+              transition: "transform .4s, boxshadow .4s, border-radius .4s",
+              transformOrigin: "top right",
+              zIndex: 2000,
+              ":hover": {
+                transform: "scale(2.5)",
+                boxShadow: 6,
+                borderRadius: 0
+              },
+              display: {md: "none"}
+            }}
+          />
         </Grid>
       </Container>
       <ElevationScroll >
-        <AppBar position='sticky' >
+        <AppBar sx={{position:"sticky"}}>
           <Toolbar
             sx={{
-              position: "sticky", top:0, left:0,
-              background:"linear-gradient(90deg,rgb(1, 112, 164), #01579b 30%, #01579b 70%,  #047cb4)",
               py:2,
-              px:{md:16}
+              px:{md:5}
             }}
             >
             <ScrollSpy activeClass='nav-active' >
-              <a 
+              <NavLink 
                 href="#about"
                 onClick = {(e)=>scrollTo(e, "about")}
-                style={{marginRight:"10px", color:"black", fontSize:"17px"}}
-              >About</a>
-              <a
+                style={{
+                  marginRight:8,
+                }}
+              >About</NavLink>
+              <NavLink
                 href="#projects"
                 onClick = {(e)=>scrollTo(e, "projects")}
-                style={{marginRight:"10px", color:"black", fontSize:"17px"}}
-              >Projects</a>
-              <a
+                style={{marginRight:8,}}
+              >Projects</NavLink>
+              <NavLink
                 href="#trainings"
                 onClick = {(e)=>scrollTo(e, "trainings")}
-                style={{marginRight:"auto", color:"black", fontSize:"17px"}}
-              >Trainings</a>
+                style={{marginRight:"auto",}}
+              >Trainings</NavLink>
             </ScrollSpy>
 
             <Button
-              color='secondary'
               variant="contained"
+              color='secondary'
               onClick={(e)=>scrollTo(e, "contact")}
-            >Get In Touch</Button>
+            >
+              Get In Touch
+            </Button>
           </Toolbar>
-      </AppBar>
+        </AppBar>
       </ElevationScroll>
-      
-    </>
+    </Box>
   );
 }
 
