@@ -28,7 +28,7 @@ const projects = [
         purpose: "Implemented unit testing with Jest to ensure component stability and catch regressions early in development.",
       },
     ],
-    github: "https://github.com/ASPhilemon/dash-growthspring",
+    github: "https://github.com/ASPhilemon/api-growthspring",
     live: "https://dash.growthspringers.com",
     photo: growthspring,
   },
