@@ -34,42 +34,42 @@ const trainings = [
     skills: [
       {
         name: "Semantic HTML",
-        about: "Applied meaningful HTML tags to improve accessibility and SEO, enhancing both human and machine understanding of web content.",
+        about: "Use of meaningful HTML tags to improve accessibility and SEO, enhancing both human and machine understanding of web content.",
         img: semanticHTML,
       },
       {
         name: "Responsive Web Design",
-        about: "Implemented adaptive layouts using media queries and flexible units to ensure seamless experiences across various screen sizes and devices.",
+        about: "Adaptive layouts using media queries and flexible units to ensure seamless experiences across various screen sizes and devices.",
         img: responsiveWebDesign,
       },
       {
         name: "State Management in React",
-        about: "Handled complex state in React applications using hooks like useState, useReducer, and the Context API to create dynamic, responsive interfaces.",
+        about: "Complex state management using hooks such as useState, useReducer, and the Context API to create dynamic interfaces.",
         img: reactStateManagement,
       },
       {
         name: "API Integration",
-        about: "Integrated RESTful APIs into React apps using fetch and async/await to handle real-time data fetching and client-server communication.",
+        about: "Integration of frontend with backend using the fetch browser API",
         img: apiIntegration,
       },
       {
         name: "Accesibility",
-        about: "Built inclusive web experiences by applying ARIA roles, semantic tags, and keyboard navigation support for users of all abilities.",
+        about: "Inclusive web experiences using semantic tags and ARIA roles, and keyboard navigation support for users with limited abilities.",
         img: accesibility,
       },
       {
         name: "Version Control",
-        about: "Utilized Git for source control—tracking changes, branching, and managing project history in collaborative development environments.",
+        about: "Version control with git, managing project history in collaborative development environments.",
         img: git,
       },
       {
         name: "GitHub",
-        about: "Collaborated on projects using GitHub by managing repositories, handling pull requests, and participating in code reviews.",
+        about: "Remote hosting of git repositories and collaboration",
         img: github,
       },
       {
         name: "Unit Testing",
-        about: "Wrote unit tests for React components using Jest and React Testing Library to ensure reliability, catch bugs, and maintain code quality.",
+        about: "Unit testing of React components using Jest and React Testing Library to ensure reliability, catch bugs, and maintain code quality.",
         img: unitTesting,
       },
     ],
@@ -90,17 +90,17 @@ const trainings = [
       },
       {
         name: "Django Web Framework",
-        about: "Built full-featured web applications using Django’s built-in tools for routing, templating, forms, and authentication.",
+        about: "Development of full-featured web applications using Django's built-in tools for routing, templating, forms, and authentication.",
         img: djangoWebFramework,
       },
       {
         name: "Django REST Framework",
-        about: "Developed scalable RESTful APIs with Django REST Framework, including serialization, viewsets, and token-based authentication.",
+        about: "Development of scalable REST APIs with Django REST Framework, including serialization, viewsets, and token-based authentication.",
         img: djangoRESTFramework,
       },
       {
         name: "Database Design",
-        about: "Designed normalized relational databases and structured schemas for efficient data retrieval and integrity using SQL and Django ORM.",
+        about: "Database normalization for efficient transactional data storage and retrieval, Django Object Relation Mapper(ORM) built in tool to abstract raw SQL",
         img: databaseDesign,
       },
       {
@@ -110,7 +110,7 @@ const trainings = [
       },
       {
         name: "Unit Testing",
-        about: "Wrote and executed unit tests with Pytest to validate backend logic, models, and endpoints, ensuring system reliability.",
+        about: "Unit testing with Pytest to validate backend logic, models, and endpoints, ensuring system correctness.",
         img: pytest,
       },
     ],
@@ -125,22 +125,22 @@ const trainings = [
     skills: [
       {
         name: "Nodejs Architecture",
-        about: "Explored Node.js internals such as the call stack, event loop, event queue, and the libuv thread pool for non-blocking I/O.",
+        about: "Learned Node.js internals such as the call stack, event loop, event queue, and the libuv thread pool for non-blocking I/O.",
         img: nodeArchitecture,
       },
       {
-        name: "Synchronous & Asyncronous Programming",
-        about: "Handled both synchronous and asynchronous operations using callbacks, Promises, and async/await patterns in Node.js.",
+        name: "Asyncronous Programming",
+        about: "Asynchronous I/O operation using callback based APIs, Promises, and async/await patterns.",
         img: syncAndAsyncProgramming,
       },
       {
         name: "Express Web Framework",
-        about: "Built RESTful APIs and middleware pipelines using Express.js, handling routes, errors, and server responses.",
+        about: "Route handling, middlewares and global error handling in Express apps",
         img: expressWebFramework,
       },
       {
         name: "Package Management",
-        about: "Managed project dependencies using npm, configured scripts via package.json, and worked with common Node.js packages.",
+        about: "Management of project dependencies with npm, setting up and running scripts via package.json.",
         img: npm,
       },
     ],
