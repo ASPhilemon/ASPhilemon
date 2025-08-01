@@ -100,7 +100,7 @@ export default function Header() {
 
             <Button
               variant="outlined"
-              sx={{bgcolor: "white", color: "secondary.dark"}}
+              sx={{bgcolor: "white", color: "secondary.dark", boxShadow: 1}}
               onClick={(e)=>scrollTo(e, "contact")}
             >
               Get In Touch
