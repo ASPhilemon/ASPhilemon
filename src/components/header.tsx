@@ -99,8 +99,8 @@ export default function Header() {
             </ScrollSpy>
 
             <Button
-              variant="contained"
-              color='secondary'
+              variant="outlined"
+              sx={{bgcolor: "white", color: "secondary.dark"}}
               onClick={(e)=>scrollTo(e, "contact")}
             >
               Get In Touch

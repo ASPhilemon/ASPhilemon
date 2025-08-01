@@ -43,7 +43,17 @@ export default function Projects(){
 
 function Project({project}){
   return(
-    <Card component={Grid} sx={{ maxWidth: 345, pb:3, boxShadow:"none", ":hover": {boxShadow:2} }}>
+    <Card
+      component={Grid}
+      sx={{
+        maxWidth: 345,
+        pb:3,
+        boxShadow:0,
+        ":hover": {
+          boxShadow:2
+        } 
+      }}
+    >
       <CardMedia
         sx={{ height: 240 }}
         image={project.photo}
@@ -101,8 +111,9 @@ function IconWrapper({Icon}){
       background:"white",
       ":hover": {
         transform: "scale(3, 3)",
-        transformOrigin:"bottom left"},
-        boxShadow:1,
+        transformOrigin:"bottom left",
+        boxShadow: 1,
+      },
         p:1,
         mr:2
     }}>

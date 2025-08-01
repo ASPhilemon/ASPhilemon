@@ -22,7 +22,8 @@ import {
 } from 'react-icons/si';
 
 import techStack from "../data/techstack";
-import aboutDp from "../assets/img/about-dp.jpg"
+//import aboutDp from "../assets/img/about-dp.jpg"
+import dp from "../assets/img/dp.jpg"
 
 
 export default function About(){
@@ -31,6 +32,7 @@ export default function About(){
   <Container maxWidth ={false} id="about" sx={{
      py:8, display: "flex", justifyContent:"center",
      alignItems:"start", px: {lg: 20},
+     
     }}
   >
 
@@ -64,9 +66,9 @@ export default function About(){
     </Box>
     <Box
       component={"img"}
-      src={aboutDp}
-      width={300}
-      sx={{ borderRadius: 1, marginLeft: "auto", boxShadow: 1, display:{xs: "none", md:"block"}}}
+      src={dp}
+      width={200}
+      sx={{ borderRadius: 2, marginLeft: "auto", boxShadow: 1, display:{xs: "none", md:"block"}}}
     />
   </Container>
   )

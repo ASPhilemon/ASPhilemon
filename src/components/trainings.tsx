@@ -46,9 +46,12 @@ function Training({training}){
       sx={{
         maxWidth: 345,
         pb:3,
-        boxShadow:1,
-        border:0,
-        ":hover": {boxShadow:3},
+        border:1,
+        borderColor:"primary.light",
+        boxShadow: 0,
+        ":hover": {
+          boxShadow:3
+        },
         transition: "height 1s"
       }}
     >
@@ -85,7 +88,6 @@ function Training({training}){
                           width:"60px",
                           maxHeight:"40px",
                           borderRadius:0,
-                          boxShadow:1,
                           transformOrigin:"bottom left",
                           transition: "transform 0.4s",
                           p:0.3,
