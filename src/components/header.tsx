@@ -14,7 +14,7 @@ import dp from "../assets/img/dp.jpg"
 import ScrollSpy from 'react-scrollspy-navigation';
 import { scrollTo } from '../util/scrollTo';
 
-const NavLink = styled(Link)(({ theme }) => ({
+const NavLink = styled(Link)(() => ({
   fontSize: 16,
   color: "white",
   ":hover": {
