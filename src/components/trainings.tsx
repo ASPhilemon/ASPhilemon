@@ -1,6 +1,6 @@
 import {
   Container, Grid, Typography, Button, Box,
-  Card, CardMedia, CardContent, CardActions,
+  Card, CardMedia, CardContent, CardActions, CardActionArea,
   List, ListItem, ListItemIcon, ListItemText,
   Avatar,
 } from "@mui/material"
@@ -50,18 +50,20 @@ function Training({training}){
           maxWidth: 345,
           pb:3,
           border:1,
-          borderColor:"primary.light",
+          borderColor:"#D3D3D3",
           boxShadow: 0,
           ":hover": {
             boxShadow:3
           },
-          transition: "height 1s"
+          height: "100%"
         }}
       >
-        <CardMedia
-          sx={{ height: 240, borderBottom: 0}}
-          image={training.certificate}
-        />
+        <CardActionArea component = "a" href = {training.certificateURL} target="blank" >
+          <CardMedia
+            sx={{ height: 240, borderBottom: 0}}
+            image={training.certificate}
+          />
+        </CardActionArea>
         <CardContent>
           <Typography sx={{fontSize: 18, color:"primary.dark"}} gutterBottom variant="h6">
             {training.name}

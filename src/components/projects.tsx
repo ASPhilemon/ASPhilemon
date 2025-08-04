@@ -1,6 +1,6 @@
 import {
   Container, Grid, Typography, Button,
-  Card, CardMedia, CardContent, CardActions,
+  Card, CardMedia, CardContent, CardActions, CardActionArea,
   List, ListItem, ListItemIcon, ListItemText,
   Box
 } from "@mui/material"
@@ -54,44 +54,48 @@ function Project({project}){
           boxShadow:0,
           ":hover": {
             boxShadow:2
-          } 
+          },
+          height: "100%",
         }}
       >
-        <CardMedia
-          sx={{ height: 240 }}
-          image={project.photo}
-        />
-        <CardContent>
-          <Typography sx={{fontSize: 18, color:"primary.dark"}} gutterBottom variant="h6">
-            {project.name}
-          </Typography>
-          <Typography sx={{  mb:2 }}>
-            {project.overview}
-          </Typography>
-          <Typography sx={{}}>
-            {project.objective}
-          </Typography>
-          <Typography sx={{fontSize: 17, mt:2, mb:0, fontWeight:900, color:"primary.dark"}}  gutterBottom variant="h6" >
-            Project Stack
-          </Typography>
-          <List>
-            {
-              project.stack.map((tool)=>{
-                const Icon = icons[tool.name]
-                return(
-                  <ListItem key={tool.name} sx={{p:1}} >
-                    <ListItemIcon> { <IconWrapper Icon = {Icon} /> } </ListItemIcon>
-                    <ListItemText> { tool.purpose} </ListItemText>
-                  </ListItem>
-                )
-              })
-            }
-          </List>
-        </CardContent>
-        <CardActions sx={{display:"flex", justifyContent:"center"}} >
-          <Button color="secondary" href={project.github} variant='outlined' startIcon = {<GitHubIcon/>} endIcon = {<ArrowOutwardIcon/>} target='blank' component="a" size="small" sx={{mr:2}}>REPO</Button>
-          <Button color="secondary" href={project.live} variant='outlined' startIcon = {<WebIcon/>} endIcon = {<ArrowOutwardIcon/>} target='blank' component="a" size="small">Live</Button>
-        </CardActions>
+        <CardActionArea component = "a" href = {project.live} target="blank" >
+          <CardMedia
+            sx={{ height: 240 }}
+            image={project.photo}
+          />
+        </CardActionArea>
+          <CardContent>
+            <Typography sx={{fontSize: 18, color:"primary.dark"}} gutterBottom variant="h6">
+              {project.name}
+            </Typography>
+            <Typography sx={{  mb:2 }}>
+              {project.overview}
+            </Typography>
+            <Typography sx={{}}>
+              {project.objective}
+            </Typography>
+            <Typography sx={{fontSize: 17, mt:2, mb:0, fontWeight:900, color:"primary.dark"}}  gutterBottom variant="h6" >
+              Project Stack
+            </Typography>
+            <List>
+              {
+                project.stack.map((tool)=>{
+                  const Icon = icons[tool.name]
+                  return(
+                    <ListItem key={tool.name} sx={{p:1}} >
+                      <ListItemIcon> { <IconWrapper Icon = {Icon} /> } </ListItemIcon>
+                      <ListItemText> { tool.purpose} </ListItemText>
+                    </ListItem>
+                  )
+                })
+              }
+            </List>
+          </CardContent>
+          <CardActions sx={{display:"flex", justifyContent:"center"}} >
+            <Button color="secondary" href={project.github} variant='outlined' startIcon = {<GitHubIcon/>} endIcon = {<ArrowOutwardIcon/>} target='blank' component="a" size="small" sx={{mr:2}}>REPO</Button>
+            <Button color="secondary" href={project.live} variant='outlined' startIcon = {<WebIcon/>} endIcon = {<ArrowOutwardIcon/>} target='blank' component="a" size="small">Live</Button>
+          </CardActions>
+        
       </Card>
     </SlideBox>
   )
