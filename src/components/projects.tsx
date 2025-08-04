@@ -19,6 +19,8 @@ import {
   SiJest as JestIcon,
 } from 'react-icons/si';
 
+import { SlideBox } from "./slide-card";
+
 import { blue } from "@mui/material/colors";
 
 import projects from "../data/projects"
@@ -43,53 +45,55 @@ export default function Projects(){
 
 function Project({project}){
   return(
-    <Card
-      component={Grid}
-      sx={{
-        maxWidth: 345,
-        pb:3,
-        boxShadow:0,
-        ":hover": {
-          boxShadow:2
-        } 
-      }}
-    >
-      <CardMedia
-        sx={{ height: 240 }}
-        image={project.photo}
-      />
-      <CardContent>
-        <Typography sx={{fontSize: 18, color:"primary.dark"}} gutterBottom variant="h6">
-          {project.name}
-        </Typography>
-        <Typography sx={{  mb:2 }}>
-          {project.overview}
-        </Typography>
-        <Typography sx={{}}>
-          {project.objective}
-        </Typography>
-        <Typography sx={{fontSize: 17, mt:2, mb:0, fontWeight:900, color:"primary.dark"}}  gutterBottom variant="h6" >
-          Project Stack
-        </Typography>
-        <List>
-          {
-            project.stack.map((tool)=>{
-              const Icon = icons[tool.name]
-              return(
-                <ListItem key={tool.name} sx={{p:1}} >
-                  <ListItemIcon> { <IconWrapper Icon = {Icon} /> } </ListItemIcon>
-                  <ListItemText> { tool.purpose} </ListItemText>
-                </ListItem>
-              )
-            })
-          }
-        </List>
-      </CardContent>
-      <CardActions sx={{display:"flex", justifyContent:"center"}} >
-        <Button color="secondary" href={project.github} variant='outlined' startIcon = {<GitHubIcon/>} endIcon = {<ArrowOutwardIcon/>} target='blank' component="a" size="small" sx={{mr:2}}>REPO</Button>
-        <Button color="secondary" href={project.live} variant='outlined' startIcon = {<WebIcon/>} endIcon = {<ArrowOutwardIcon/>} target='blank' component="a" size="small">Live</Button>
-      </CardActions>
-    </Card>
+    <SlideBox>
+      <Card
+        component={Grid}
+        sx={{
+          maxWidth: 345,
+          pb:3,
+          boxShadow:0,
+          ":hover": {
+            boxShadow:2
+          } 
+        }}
+      >
+        <CardMedia
+          sx={{ height: 240 }}
+          image={project.photo}
+        />
+        <CardContent>
+          <Typography sx={{fontSize: 18, color:"primary.dark"}} gutterBottom variant="h6">
+            {project.name}
+          </Typography>
+          <Typography sx={{  mb:2 }}>
+            {project.overview}
+          </Typography>
+          <Typography sx={{}}>
+            {project.objective}
+          </Typography>
+          <Typography sx={{fontSize: 17, mt:2, mb:0, fontWeight:900, color:"primary.dark"}}  gutterBottom variant="h6" >
+            Project Stack
+          </Typography>
+          <List>
+            {
+              project.stack.map((tool)=>{
+                const Icon = icons[tool.name]
+                return(
+                  <ListItem key={tool.name} sx={{p:1}} >
+                    <ListItemIcon> { <IconWrapper Icon = {Icon} /> } </ListItemIcon>
+                    <ListItemText> { tool.purpose} </ListItemText>
+                  </ListItem>
+                )
+              })
+            }
+          </List>
+        </CardContent>
+        <CardActions sx={{display:"flex", justifyContent:"center"}} >
+          <Button color="secondary" href={project.github} variant='outlined' startIcon = {<GitHubIcon/>} endIcon = {<ArrowOutwardIcon/>} target='blank' component="a" size="small" sx={{mr:2}}>REPO</Button>
+          <Button color="secondary" href={project.live} variant='outlined' startIcon = {<WebIcon/>} endIcon = {<ArrowOutwardIcon/>} target='blank' component="a" size="small">Live</Button>
+        </CardActions>
+      </Card>
+    </SlideBox>
   )
 
 }
