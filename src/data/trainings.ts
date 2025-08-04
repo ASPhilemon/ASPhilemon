@@ -39,7 +39,7 @@ import syncAndAsyncProgramming from "../assets/img/trainings/ibm-node-express/sy
 
 const trainings = [
   {
-    name: "Design of Large Scale Systems",
+    name: "Design of Modern Large Scale Systems",
     about: `The Design of Large Scale Systems is a rigorous course that teaches learners how to architect real-life systems that scale to millions of daily users, as well as process and store petabytes of data. By the end of the course, the learners are equipped to take an ambiguous and high-level requirement and go through all the stages of a system design, all the way to its final Software Architecture.`,
     certificate: systemDesignCertificate,
     certificateURL: "https://www.udemy.com/certificate/UC-3c2d9817-da3e-4e16-88af-691be227ecf0/",
